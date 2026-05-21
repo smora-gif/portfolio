@@ -1,0 +1,235 @@
+/* Le fond sombre de la page */
+body {
+    background-color: #121212;
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* La bannière principale */
+.banner {
+    background: linear-gradient(transparent, rgba(0,0,0,0.5)), #b31942;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 30px;
+    color: white;
+}
+
+/* L'image de l'album */
+.album-Image {
+    width: 232px;
+    height: 232px;
+    box-shadow: 0 4px 60px rgba(0,0,0,0.5);
+    margin-right: 24px;
+    object-fit: cover;
+}
+
+/* Organisation du texte */
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.type {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 96px;
+    margin: 8px 0;
+    font-weight: 900;
+    letter-spacing: -4px;
+}
+
+/* La ligne avec la petite photo de l'artiste en bas */
+.footer-info {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.artist-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.details {
+    opacity: 0.7;
+    margin-left: 4px;
+}
+
+.style-header {
+
+
+}
+
+.action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    background: linear-gradient(rgba(179, 25, 66, 0.3) 0%, #121212 100%); /* Utilise le rouge de votre bannière pour un dégradé fluide */
+}
+
+.left-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px; 
+}
+
+.play-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #1ed760;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.05);
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: #b3b3b3;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.icon-btn:hover {
+    color: #ffffff;
+}
+
+.circle-btn {
+    border: 1px solid #b3b3b3;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+}
+
+.circle-btn:hover {
+    border-color: #ffffff;
+}
+
+.right-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #b3b3b3;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.right-actions:hover {
+    color: #ffffff;
+}
+
+.tracklist-header {
+    display: flex;
+    align-items: center;
+    padding: 0 32px 8px 32px;
+    margin: 0 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #b3b3b3;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.col-num {
+    width: 32px;
+    text-align: left;
+    font-size: 16px;
+    color: #b3b3b3
+}
+
+.col-title {
+    flex-grow: 1;
+    padding-left: 16px;
+}
+
+.col-duration {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* --- LISTE DES LIGNES (STYLE SPOTIFY) --- */
+.portfolio-list {
+    margin: 15px 32px;
+}
+
+.track-row {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Effet de survol : la ligne devient légèrement grise */
+.track-row:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Texte principal (ex: PARCOURS) */
+.track-row .main-text {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+}
+
+/* Texte secondaire / Description (ex: Mon expérience...) */
+.track-row .sub-text {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* Au survol de la ligne, la description s'illumine un peu plus */
+.track-row:hover .sub-text {
+    color: #ffffff;
+}
+
+/* La colonne tout à droite (ex: "Curriculum", "Skills") */
+.track-row .col-duration {
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+/* Le fameux badge "E" (Explicit) de Spotify */
+.explicit-badge {
+    background-color: #b3b3b3;
+    color: #121212;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: sans-serif;
+    padding: 1px 4px;
+    border-radius: 2px;
+    margin-right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 14px;
+    width: 11px;
+    text-transform: uppercase;
+}
