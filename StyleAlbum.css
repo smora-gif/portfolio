@@ -1,54 +1,75 @@
-/* Le fond sombre de la page */
-body {
+/* ==========================================================================
+   1. STRUCTURES & FOND (FLEXBOX ALIGNEMENT CÔTE À CÔTE)
+   ========================================================================== */
+html, body {
     background-color: #121212;
     margin: 0;
+    padding: 0;
     font-family: 'Segoe UI', Roboto, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
-/* La bannière principale */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.left-content {
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    min-width: 0; 
+    transition: flex 0.3s cubic-bezier(0.3, 0, 0, 1);
+}
+
+/* ==========================================================================
+   2. BANNIÈRE ALBUM
+   ========================================================================== */
 .banner {
-    background: linear-gradient(transparent, rgba(0,0,0,0.5)), #b31942;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6)), #b31942;
     height: 300px;
     display: flex;
     align-items: flex-end;
-    padding: 20px 30px;
+    padding: 20px 32px;
     color: white;
+    box-sizing: border-box;
 }
 
-/* L'image de l'album */
 .album-Image {
-    width: 232px;
-    height: 232px;
-    box-shadow: 0 4px 60px rgba(0,0,0,0.5);
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
     margin-right: 24px;
     object-fit: cover;
 }
 
-/* Organisation du texte */
 .text-content {
     display: flex;
     flex-direction: column;
 }
 
 .type {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .title {
-    font-size: 96px;
-    margin: 8px 0;
+    font-size: 72px;
+    margin: 4px 0;
     font-weight: 900;
-    letter-spacing: -4px;
+    letter-spacing: -2px;
 }
 
-/* La ligne avec la petite photo de l'artiste en bas */
 .footer-info {
     display: flex;
     align-items: center;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .artist-thumb {
@@ -63,23 +84,20 @@ body {
     margin-left: 4px;
 }
 
-.style-header {
-
-
-}
-
+/* ==========================================================================
+   3. BARRE D'ACTIONS
+   ========================================================================== */
 .action-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 32px;
-    background: linear-gradient(rgba(179, 25, 66, 0.3) 0%, #121212 100%); /* Utilise le rouge de votre bannière pour un dégradé fluide */
+    padding: 20px 32px;
 }
 
 .left-actions {
     display: flex;
     align-items: center;
-    gap: 24px; 
+    gap: 20px;
 }
 
 .play-btn {
@@ -94,10 +112,7 @@ body {
     cursor: pointer;
     transition: transform 0.1s ease;
 }
-
-.play-btn:hover {
-    transform: scale(1.05);
-}
+.play-btn:hover { transform: scale(1.05); }
 
 .icon-btn {
     background: none;
@@ -107,12 +122,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
 }
-
-.icon-btn:hover {
-    color: #ffffff;
-}
+.icon-btn:hover { color: #ffffff; }
 
 .circle-btn {
     border: 1px solid #b3b3b3;
@@ -120,10 +131,7 @@ body {
     width: 32px;
     height: 32px;
 }
-
-.circle-btn:hover {
-    border-color: #ffffff;
-}
+.circle-btn:hover { border-color: #ffffff; }
 
 .right-actions {
     display: flex;
@@ -132,46 +140,24 @@ body {
     color: #b3b3b3;
     font-size: 14px;
     font-weight: bold;
-    cursor: pointer;
 }
 
-.right-actions:hover {
-    color: #ffffff;
-}
-
+/* ==========================================================================
+   4. EN-TÊTE ET RANGÉES (LISTE TRACKS)
+   ========================================================================== */
 .tracklist-header {
     display: flex;
     align-items: center;
-    padding: 0 32px 8px 32px;
+    padding: 0 16px 8px 16px;
     margin: 0 32px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     color: #b3b3b3;
-    font-size: 11px;
+    font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
-.col-num {
-    width: 32px;
-    text-align: left;
-    font-size: 16px;
-    color: #b3b3b3
-}
-
-.col-title {
-    flex-grow: 1;
-    padding-left: 16px;
-}
-
-.col-duration {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-/* --- LISTE DES LIGNES (STYLE SPOTIFY) --- */
 .portfolio-list {
-    margin: 15px 32px;
+    margin: 10px 32px;
 }
 
 .track-row {
@@ -180,56 +166,140 @@ body {
     padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    user-select: none;
 }
-
-/* Effet de survol : la ligne devient légèrement grise */
 .track-row:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Texte principal (ex: PARCOURS) */
-.track-row .main-text {
-    color: #ffffff;
+.col-num {
+    width: 32px;
+    color: #b3b3b3;
     font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
     display: flex;
     align-items: center;
 }
 
-/* Texte secondaire / Description (ex: Mon expérience...) */
-.track-row .sub-text {
+.play-icon-row { display: none; color: #ffffff; }
+
+.track-row:hover .num-text { display: none; }
+.track-row:hover .play-icon-row { display: block; }
+
+.col-title {
+    flex: 1;
+    padding-left: 16px;
+}
+
+.main-text {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.sub-text {
     color: #b3b3b3;
     font-size: 14px;
     margin-top: 4px;
 }
+.track-row:hover .sub-text { color: #ffffff; }
 
-/* Au survol de la ligne, la description s'illumine un peu plus */
-.track-row:hover .sub-text {
-    color: #ffffff;
-}
-
-/* La colonne tout à droite (ex: "Curriculum", "Skills") */
-.track-row .col-duration {
+.col-duration {
     color: #b3b3b3;
     font-size: 14px;
+    text-align: right;
 }
 
-/* Le fameux badge "E" (Explicit) de Spotify */
 .explicit-badge {
     background-color: #b3b3b3;
     color: #121212;
     font-size: 10px;
-    font-weight: 700;
-    font-family: sans-serif;
+    font-weight: bold;
     padding: 1px 4px;
     border-radius: 2px;
-    margin-right: 8px;
-    display: inline-flex;
+    margin-right: 6px;
+}
+
+.sidebar-panel {
+    width: 0vw; 
+    opacity: 0;
+    background-color: #121212;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    transition: width 0.4s cubic-bezier(0.3, 0, 0, 1), opacity 0.3s ease;
+    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+.sidebar-panel.active {
+    width: 80vw;
+    opacity: 1;
+    padding: 0 40px 40px 40px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    height: 14px;
-    width: 11px;
+    padding: 24px 0;
+}
+
+.sidebar-sub-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #b3b3b3;
     text-transform: uppercase;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #b3b3b3;
+    font-size: 32px;
+    cursor: pointer;
+}
+.close-btn:hover { color: #ffffff; }
+
+.sidebar-card {
+    height: 250px;
+    border-radius: 8px;
+    background: linear-gradient(to bottom, #434343 0%, #1c1c1c 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.sidebar-main-title {
+    color: white;
+    font-size: 48px; 
+    font-weight: 800;
+    margin: 0;
+}
+
+.sidebar-body {
+    background-color: #240a10; 
+    border: 1px solid rgba(179, 25, 66, 0.3);   
+    margin-top: 24px;
+    padding: 30px;             
+    border-radius: 12px;       
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); 
+}
+
+.sidebar-body h3 {
+    margin: 0 0 16px 0;
+    font-size: 14px;
+    color: #ffb3c1;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.sidebar-body p {
+    margin: 0;
+    font-size: 16px;
+    color: #fce4e8;
+    line-height: 1.8;
 }
