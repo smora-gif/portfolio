@@ -8,10 +8,13 @@
 </head>
 <body>
 
+    <!-- CONTENEUR GLOBAL FLEXBOX -->
     <div class="main-container">
         
+        <!-- COLONNE GAUCHE : LE PORTFOLIO (Prendra 20% quand le panneau est ouvert) -->
         <div class="left-content">
             
+            <!-- Bannière Album -->
             <div class="banner">
                 <img src="Images/Img1.jpg" alt="Couverture Album" class="album-Image">
                 <div class="text-content">
@@ -25,6 +28,7 @@
                 </div>
             </div>
 
+            <!-- Barre d'actions -->
             <div class="action-bar">
                 <div class="left-actions">
                     <button class="play-btn">
@@ -43,6 +47,7 @@
                 </div>
             </div>
 
+            <!-- En-tête de liste -->
             <div class="tracklist-header">
                 <div class="col-num">#</div>
                 <div class="col-title">Titre</div>
@@ -51,9 +56,11 @@
                 </div>
             </div>
 
+            <!-- LISTE DES SECTIONS -->
             <div class="portfolio-list">
                 
-                <div class="track-row" onclick="openSidebar('PARCOURS', 'Mon parcours', 'Étudiant en BTS SIO option SLAM, je suis passionné par la création d\'applications et le développement web. Rigoureux et curieux, je maîtrise les bases des langages de programmation (Java, PHP, JavaScript...) et je recherche une opportunité pour mettre mes compétences en pratique.')">
+                <!-- Ligne 1 : Parcours (Avec ton nouveau texte pro) -->
+                <div class="track-row" onclick="openSidebar('PARCOURS', 'Mon parcours', '<strong>Présentation</strong><br>Je m\'appelle Sebastian Mora, j\'ai 23 ans et je suis actuellement étudiant en BTS SIO option SLAM au sein de l\'école Nexa Digital School.<br><br><strong>Mon Parcours & Réorientation</strong><br>Après un Baccalauréat SES (option Mathématiques), j\'ai validé deux années d\'études en psychologie. Ce premier cursus universitaire m\'a permis de développer une grande rigueur, un esprit d\'analyse affûté, ainsi qu\'une forte sensibilité à la compréhension des besoins utilisateurs (UX) — des qualités qui s\'avèrent aujourd\'hui être de véritables atouts dans l\'informatique.<br><br>Souhaitant m\'orienter vers un domaine plus technique et concret, j\'ai choisi de me réorienter avec passion vers le développement d\'applications.<br><br><strong>Mon Projet Professionnel</strong><br>Ce qui m\'anime particulièrement dans le développement de solutions logicielles, c\'est la résolution de problèmes complexes et le fait de concevoir des outils concrets et fonctionnels. C\'est un domaine stimulant dans lequel je me projette pleinement.')">
                     <div class="col-num">
                         <span class="num-text">1</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
@@ -65,6 +72,7 @@
                     <div class="col-duration">Bio</div>
                 </div>
 
+                <!-- Ligne 2 : Entreprise -->
                 <div class="track-row" onclick="openSidebar('ENTREPRISE', 'Mon entreprise', 'Apprenti développeur chez Everial. Mes missions principales incluent la participation aux projets de développement de l\'entreprise, la maintenance corrective et évolutive des applications, ainsi que la découverte des flux métiers liés à la gestion documentaire.')">
                     <div class="col-num">
                         <span class="num-text">2</span>
@@ -77,7 +85,8 @@
                     <div class="col-duration">Company</div>
                 </div>
 
-                <div class="track-row" onclick="openSidebar('COMPÉTENCES', 'Mes compétences', '<strong>Développement Web :</strong> HTML, CSS, JavaScript, PHP.<br><strong>Programmation :</strong> Java, Python.<br><strong>Bases de données :</strong> MySQL, PostgreSQL.<br><strong>Outils :</strong> Git, VS Code, Linux.')">
+                <!-- Ligne 3 : Compétences -->
+                <div class="track-row" onclick="openSidebar('COMPÉTENCES', 'Mes compétences', '<strong>Développement Web :</strong> HTML, CSS, JavaScript, PHP.<br><strong>Programmation :</strong> Java, Python.<br><strong>Bases de données :</strong> MySQL, PostgreSQL.<br><strong>Outils & Méthodes :</strong> Git, VS Code, Linux, Agilité.')">
                     <div class="col-num">
                         <span class="num-text">3</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
@@ -89,6 +98,7 @@
                     <div class="col-duration">Skills</div>
                 </div>
 
+                <!-- Ligne 4 : Projets -->
                 <div class="track-row" onclick="openSidebar('PROJETS', 'Mes réalisations', 'Découvrez ici mes projets réalisés en cours de BTS SIO ainsi qu\'en entreprise : applications web, développements spécifiques et projets personnels disponibles sur mon GitHub.')">
                     <div class="col-num">
                         <span class="num-text">4</span>
@@ -101,6 +111,7 @@
                     <div class="col-duration">Works</div>
                 </div>
 
+                <!-- Ligne 5 : Veille Techno -->
                 <div class="track-row" onclick="openSidebar('VEILLE TECHNO', 'Ma veille', 'Suivi des évolutions technologiques majeures, des vulnérabilités de sécurité, des nouveaux frameworks de développement et des innovations logicielles à travers des outils comme Feedly ou des newsletters tech.')">
                     <div class="col-num">
                         <span class="num-text">5</span>
@@ -114,7 +125,10 @@
                 </div>
 
             </div>
-        </div> <div class="sidebar-panel" id="sidebarPanel">
+        </div> <!-- FIN COLONNE GAUCHE -->
+
+        <!-- PANNEAU LATÉRAL DROIT (Prendra 80% de large à l'ouverture) -->
+        <div class="sidebar-panel" id="sidebarPanel">
             <div class="sidebar-header">
                 <span id="sidebarSubTitle" class="sidebar-sub-title">Détails</span>
                 <button class="close-btn" onclick="closeSidebar()">×</button>
@@ -130,7 +144,9 @@
             </div>
         </div>
 
-    </div> <script>
+    </div> <!-- FIN CONTENEUR GLOBAL -->
+
+    <script>
         function openSidebar(title, sub, description) {
             document.getElementById('sidebarTitle').innerText = title;
             document.getElementById('sidebarSubTitle').innerText = sub;
