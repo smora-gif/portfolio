@@ -1,100 +1,146 @@
-<!Doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-<style id="react-aria-pressable-style">
-    </style>
     <meta charset="utf-8">
-    <title>Portfolio - Album by Sebastain Mora </title>
+    <title>Portfolio - Album by Sebastian Mora</title>
     <link rel="icon" sizes="32x32" type="image/png" href="Images/Img1.jpg">
-    <link rel="stylesheet" href="StyleAlbum.css"> <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="StyleAlbum.css">
 </head>
 <body>
-<div class="banner">
-        <img src="Images/Img1.jpg" alt="Couverture Album" class="album-Image">
+
+    <div class="main-container">
         
-        <div class="text-content">
-            <span class="type">Album</span>
-            <h1 class="title">PORTFOLIO</h1>
+        <div class="left-content">
             
-            <div class="footer-info">
-                <img src="Images/Img1.jpg" alt="Artiste" class="artist-thumb">
-                <span class="artist-name">Sebastian Mora</span>
-                <span class="details"> • 2026 • 17 songs, 57 min 28 sec</span>
+            <div class="banner">
+                <img src="Images/Img1.jpg" alt="Couverture Album" class="album-Image">
+                <div class="text-content">
+                    <span class="type">Album</span>
+                    <h1 class="title">PORTFOLIO</h1>
+                    <div class="footer-info">
+                        <img src="Images/Img1.jpg" alt="Artiste" class="artist-thumb">
+                        <span class="artist-name">Sebastian Mora</span>
+                        <span class="details"> • 2026 • 5 sections</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-bar">
+                <div class="left-actions">
+                    <button class="play-btn">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="black"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
+                    </button>
+                    <button class="icon-btn circle-btn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.25 12.75V19h1.5v-6.25H19v-1.5h-6.25V5h-1.5v6.25H5v1.5h6.25z"/></svg>
+                    </button>
+                    <button class="icon-btn dots-btn">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4.5 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm7.5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm7.5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+                    </button>
+                </div>
+                <div class="right-actions">
+                    <span class="list-text">Liste</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M3 22a1 1 0 110-2h18a1 1 0 110 2H3zm0-9a1 1 0 110-2h18a1 1 0 110 2H3zm0-9a1 1 0 110-2h18a1 1 0 110 2H3z"/></svg>
+                </div>
+            </div>
+
+            <div class="tracklist-header">
+                <div class="col-num">#</div>
+                <div class="col-title">Titre</div>
+                <div class="col-duration">
+                    <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm8.5-4.75a.75.75 0 00-1.5 0V8.5a.75.75 0 00.34.62l3.25 2a.75.75 0 10.82-1.24l-2.91-1.79V3.25z"/></svg>
+                </div>
+            </div>
+
+            <div class="portfolio-list">
+                
+                <div class="track-row" onclick="openSidebar('PARCOURS', 'Mon parcours', 'Étudiant en BTS SIO option SLAM, je suis passionné par la création d\'applications et le développement web. Rigoureux et curieux, je maîtrise les bases des langages de programmation (Java, PHP, JavaScript...) et je recherche une opportunité pour mettre mes compétences en pratique.')">
+                    <div class="col-num">
+                        <span class="num-text">1</span>
+                        <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
+                    </div>
+                    <div class="col-title">
+                        <div class="main-text">PARCOURS</div>
+                        <div class="sub-text">Mon expérience, formations, qui suis-je?</div>
+                    </div>
+                    <div class="col-duration">Bio</div>
+                </div>
+
+                <div class="track-row" onclick="openSidebar('ENTREPRISE', 'Mon entreprise', 'Apprenti développeur chez Everial. Mes missions principales incluent la participation aux projets de développement de l\'entreprise, la maintenance corrective et évolutive des applications, ainsi que la découverte des flux métiers liés à la gestion documentaire.')">
+                    <div class="col-num">
+                        <span class="num-text">2</span>
+                        <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
+                    </div>
+                    <div class="col-title">
+                        <div class="main-text">ENTREPRISE</div>
+                        <div class="sub-text">Alternant chez Everial</div>
+                    </div>
+                    <div class="col-duration">Company</div>
+                </div>
+
+                <div class="track-row" onclick="openSidebar('COMPÉTENCES', 'Mes compétences', '<strong>Développement Web :</strong> HTML, CSS, JavaScript, PHP.<br><strong>Programmation :</strong> Java, Python.<br><strong>Bases de données :</strong> MySQL, PostgreSQL.<br><strong>Outils :</strong> Git, VS Code, Linux.')">
+                    <div class="col-num">
+                        <span class="num-text">3</span>
+                        <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
+                    </div>
+                    <div class="col-title">
+                        <div class="main-text">COMPÉTENCES</div>
+                        <div class="sub-text">Tech stack, langages et outils maîtrisés</div>
+                    </div>
+                    <div class="col-duration">Skills</div>
+                </div>
+
+                <div class="track-row" onclick="openSidebar('PROJETS', 'Mes réalisations', 'Découvrez ici mes projets réalisés en cours de BTS SIO ainsi qu\'en entreprise : applications web, développements spécifiques et projets personnels disponibles sur mon GitHub.')">
+                    <div class="col-num">
+                        <span class="num-text">4</span>
+                        <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
+                    </div>
+                    <div class="col-title">
+                        <div class="main-text"><span class="explicit-badge">E</span> PROJETS</div>
+                        <div class="sub-text">Réalisations web, applications et GitHub</div>
+                    </div>
+                    <div class="col-duration">Works</div>
+                </div>
+
+                <div class="track-row" onclick="openSidebar('VEILLE TECHNO', 'Ma veille', 'Suivi des évolutions technologiques majeures, des vulnérabilités de sécurité, des nouveaux frameworks de développement et des innovations logicielles à travers des outils comme Feedly ou des newsletters tech.')">
+                    <div class="col-num">
+                        <span class="num-text">5</span>
+                        <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
+                    </div>
+                    <div class="col-title">
+                        <div class="main-text">VEILLE TECHNO</div>
+                        <div class="sub-text">Sujets d'actualité, articles et innovations</div>
+                    </div>
+                    <div class="col-duration">Watch</div>
+                </div>
+
+            </div>
+        </div> <div class="sidebar-panel" id="sidebarPanel">
+            <div class="sidebar-header">
+                <span id="sidebarSubTitle" class="sidebar-sub-title">Détails</span>
+                <button class="close-btn" onclick="closeSidebar()">×</button>
+            </div>
+            
+            <div class="sidebar-card">
+                <h2 id="sidebarTitle" class="sidebar-main-title">Section</h2>
+            </div>
+
+            <div class="sidebar-body">
+                <h3>À propos</h3>
+                <p id="sidebarDescription">Sélectionnez une section pour afficher les détails ici.</p>
             </div>
         </div>
-    </div>
-    <div class="action-bar">
-        <div class="left-actions">
-            <button class="play-btn">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="black"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
-            </button>
-            <button class="icon-btn circle-btn">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.25 12.75V19h1.5v-6.25H19v-1.5h-6.25V5h-1.5v6.25H5v1.5h6.25z"/></svg>
-            </button>
-            <button class="icon-btn dots-btn">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4.5 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm7.5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm7.5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
-            </button>
-        </div>
-        <div class="right-actions">
-            <span class="list-text">Liste</span>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M3 22a1 1 0 110-2h18a1 1 0 110 2H3zm0-9a1 1 0 110-2h18a1 1 0 110 2H3zm0-9a1 1 0 110-2h18a1 1 0 110 2H3z"/></svg>
-        </div>
-    </div>
 
-    <div class="tracklist-header">
-        <div class="col-num">#</div>
-        <div class="col-title">Titre</div>
-        <div class="col-duration">
-            <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm8.5-4.75a.75.75 0 00-1.5 0V8.5a.75.75 0 00.34.62l3.25 2a.75.75 0 10.82-1.24l-2.91-1.79V3.25z"/></svg>
-        </div>
-    </div>
-    <div class="portfolio-list">
+    </div> <script>
+        function openSidebar(title, sub, description) {
+            document.getElementById('sidebarTitle').innerText = title;
+            document.getElementById('sidebarSubTitle').innerText = sub;
+            document.getElementById('sidebarDescription').innerHTML = description;
+            document.getElementById('sidebarPanel').classList.add('active');
+        }
 
-    <div class="track-row">
-        <div class="col-num">1</div>
-        <div class="col-title">
-            <div class="main-text">PARCOURS</div>
-            <div class="sub-text">Mon expérience, formations, qui suis-je?</div>
-        </div>
-    </div>
-        <div class="track-row">
-        <div class="col-num">2</div>
-        <div class="col-title">
-            <div class="main-text">Entreprise</div>
-            <div class="sub-text"></div>
-    <div>
-
-    </div>
-
-    <div class="track-row">
-        <div class="col-num">3</div>
-        <div class="col-title">
-            <div class="main-text">COMPÉTENCES</div>
-            <div class="sub-text">Tech stack, langages et outils maîtrisés</div>
-        </div>
-        <div class="col-duration">Skills</div>
-    </div>
-
-    <div class="track-row">
-        <div class="col-num">4</div>
-        <div class="col-title">
-            <div class="main-text">
-                <span class="explicit-badge">E</span> PROJETS
-            </div>
-            <div class="sub-text">Réalisations web, applications et GitHub</div>
-        </div>
-        <div class="col-duration">Works</div>
-    </div>
-
-    <div class="track-row">
-        <div class="col-num">5</div>
-        <div class="col-title">
-            <div class="main-text">VEILLE TECHNO</div>
-            <div class="sub-text">Sujets d'actualité, articles et innovations</div>
-        </div>
-        <div class="col-duration">Watch</div>
-    </div>
-
-</div>
+        function closeSidebar() {
+            document.getElementById('sidebarPanel').classList.remove('active');
+        }
+    </script>
 </body>
 </html>
