@@ -11,7 +11,7 @@
     <!-- CONTENEUR GLOBAL FLEXBOX -->
     <div class="main-container">
         
-        <!-- COLONNE GAUCHE : LE PORTFOLIO (Prendra 20% quand le panneau est ouvert) -->
+        <!-- COLONNE GAUCHE : LE PORTFOLIO (Occupe le reste de l'espace) -->
         <div class="left-content">
             
             <!-- Bannière Album -->
@@ -59,8 +59,8 @@
             <!-- LISTE DES SECTIONS -->
             <div class="portfolio-list">
                 
-                <!-- Ligne 1 : Parcours (Avec ton nouveau texte pro) -->
-                <div class="track-row" onclick="openSidebar('PARCOURS', 'Mon parcours', '<strong>Présentation</strong><br>Je m\'appelle Sebastian Mora, j\'ai 23 ans et je suis actuellement étudiant en BTS SIO option SLAM au sein de l\'école Nexa Digital School.<br><br><strong>Mon Parcours & Réorientation</strong><br>Après un Baccalauréat SES (option Mathématiques), j\'ai validé deux années d\'études en psychologie. Ce premier cursus universitaire m\'a permis de développer une grande rigueur, un esprit d\'analyse affûté, ainsi qu\'une forte sensibilité à la compréhension des besoins utilisateurs (UX) — des qualités qui s\'avèrent aujourd\'hui être de véritables atouts dans l\'informatique.<br><br>Souhaitant m\'orienter vers un domaine plus technique et concret, j\'ai choisi de me réorienter avec passion vers le développement d\'applications.<br><br><strong>Mon Projet Professionnel</strong><br>Ce qui m\'anime particulièrement dans le développement de solutions logicielles, c\'est la résolution de problèmes complexes et le fait de concevoir des outils concrets et fonctionnels. C\'est un domaine stimulant dans lequel je me projette pleinement.')">
+                <!-- Ligne 1 : Parcours -->
+                <div class="track-row" onclick="openSidebar('PARCOURS', 'Mon parcours', '<strong>Présentation</strong><br>Je m\'appelle Sebastian Mora, j\'ai 23 ans et je suis actuellement étudiant en BTS SIO option SLAM au sein de l\'école Nexa Digital School.<br><br><strong>Mon Parcours & Réorientation</strong><br>Après un Baccalauréat SES (option Mathématiques), j\'ai validé deux années d\'études en psychologie. Ce premier cursus universitaire m\'a permis de développer une grande rigueur, un esprit d\'analyse affûté, ainsi qu\'une forte sensibilité à la compréhension des besoins utilisateurs (UX) — des qualités qui s\'avèrent aujourd\'hui être de véritables atouts dans l\'informatique.<br><br>Souhaitant m\'orienter vers un domaine plus technique et concret, j\'ai choisi de me réorienter avec passion vers le développement d\'applications.<br><br><strong>Mon Projet Professionnel</strong><br>Ce qui m\'anime particulièrement dans le développement de solutions logicielles, c\'est la résolution de problèmes complexes et le fait de concevoir des outils concrets et fonctionnels. C\'est un domaine stimulant dans lequel je me projette pleinement.', '')">
                     <div class="col-num">
                         <span class="num-text">1</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
@@ -73,7 +73,7 @@
                 </div>
 
                 <!-- Ligne 2 : Entreprise -->
-                <div class="track-row" onclick="openSidebar('ENTREPRISE', 'Mon entreprise', 'Apprenti développeur chez Everial. Mes missions principales incluent la participation aux projets de développement de l\'entreprise, la maintenance corrective et évolutive des applications, ainsi que la découverte des flux métiers liés à la gestion documentaire.')">
+                <div class="track-row" onclick="openSidebar('ENTREPRISE', 'Mon entreprise', '<strong>Présentation & Évolution</strong><br>Everial est une entreprise spécialisée dans la gestion documentaire. Historiquement centrée sur l\'archivage physique de documents d\'entreprises, elle a opéré une transition majeure vers le digital.<br><br><strong>La Chaîne de Dématérialisation</strong><br>Aujourd\'hui, l\'entreprise s\'appuie sur une chaîne de dématérialisation complète et automatisée, couvrant tout le processus depuis la réception du document physique ou numérique jusqu\'à sa livraison finale au client au format digital.<br><br><strong>Technologies & Intelligence Artificielle</strong><br>Pour optimiser ces flux, Everial intègre des outils de reconnaissance automatique (LAD/RAD/OCR) capables d\'extraire intelligemment les données textuelles, comme les champs d\'une facture (montants, dates, fournisseurs).<br><br><strong>Contrôle Qualité</strong><br>Afin de garantir une fiabilité maximale, une équipe dédiée à la saisie et à la vérification valide et corrige manuellement les champs insérés par les outils automatiques avant l\'envoi final.', 'Images/entreprise.png')">
                     <div class="col-num">
                         <span class="num-text">2</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
@@ -86,7 +86,7 @@
                 </div>
 
                 <!-- Ligne 3 : Compétences -->
-                <div class="track-row" onclick="openSidebar('COMPÉTENCES', 'Mes compétences', '<strong>Développement Web :</strong> HTML, CSS, JavaScript, PHP.<br><strong>Programmation :</strong> Java, Python.<br><strong>Bases de données :</strong> MySQL, PostgreSQL.<br><strong>Outils & Méthodes :</strong> Git, VS Code, Linux, Agilité.')">
+                <div class="track-row" onclick="openSidebar('COMPÉTENCES', 'Mes compétences', '<strong>Développement Web :<strong>Développement Web :</strong> HTML, CSS, JavaScript, PHP.<br><strong>Programmation :</strong> Java, Python.<br><strong>Bases de données :</strong> MySQL, PostgreSQL.<br><strong>Outils & Méthodes :</strong> Git, VS Code, Linux, Méthodologies Agiles.', 'Images/competences.png')">
                     <div class="col-num">
                         <span class="num-text">3</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
@@ -98,21 +98,30 @@
                     <div class="col-duration">Skills</div>
                 </div>
 
-                <!-- Ligne 4 : Projets -->
-                <div class="track-row" onclick="openSidebar('PROJETS', 'Mes réalisations', 'Découvrez ici mes projets réalisés en cours de BTS SIO ainsi qu\'en entreprise : applications web, développements spécifiques et projets personnels disponibles sur mon GitHub.')">
+                <!-- Ligne 4 : PROJETS mise à jour avec l'image C# -->
+                <div class="track-row" onclick="openSidebar('PROJETS', 'Mes réalisations', 
+                    '<strong>Projets réalisés à l\'École (BTS SIO SLAM)</strong><br>\
+                    • <u>Kuzco</u> : Développement d\'une page web avec un système de filtre interactif pour simuler un lama.<br>\
+                    • <u>Kahoot</u> : Développement d\'une application dynamique dans le style du célèbre jeu de quiz Kahoot.<br>\
+                    • <u>Tier List</u> : Développement d\'une page web interactive permettant de créer et de personnaliser sa propre tier list.<br><br>\
+                    <strong>Projets en Entreprise (Everial)</strong><br>\
+                    • <u>Migration d\'Evicoda</u> : Migration de l\'outil interne vers une nouvelle version. Réalisation du nettoyage complet de l\'arborescence, tri et vérification des clients actifs, et mise à jour des arguments de traitements du système.<br>\
+                    • <u>Écran VDC sur Xbound</u> : Développement d\'un écran spécifique au sein de l\'outil de capture Xbound et écriture du code nécessaire pour effectuer des recherches dynamiques basées sur un référentiel de données.', 
+                    'Images/csharp.png')">
+                    
                     <div class="col-num">
                         <span class="num-text">4</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
                     </div>
                     <div class="col-title">
                         <div class="main-text"><span class="explicit-badge">E</span> PROJETS</div>
-                        <div class="sub-text">Réalisations web, applications et GitHub</div>
+                        <div class="sub-text">Projets d'école (Kuzco, Kahoot, Tier List) et Everial</div>
                     </div>
                     <div class="col-duration">Works</div>
                 </div>
 
                 <!-- Ligne 5 : Veille Techno -->
-                <div class="track-row" onclick="openSidebar('VEILLE TECHNO', 'Ma veille', 'Suivi des évolutions technologiques majeures, des vulnérabilités de sécurité, des nouveaux frameworks de développement et des innovations logicielles à travers des outils comme Feedly ou des newsletters tech.')">
+                <div class="track-row" onclick="openSidebar('VEILLE TECHNO', 'Ma veille', 'Suivi des évolutions technologiques majeures, des vulnérabilités de sécurité, des nouveaux frameworks de développement et des innovations logicielles à travers des outils de flux RSS.', 'Images/blockchain.png')">
                     <div class="col-num">
                         <span class="num-text">5</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
@@ -127,7 +136,7 @@
             </div>
         </div> <!-- FIN COLONNE GAUCHE -->
 
-        <!-- PANNEAU LATÉRAL DROIT (Prendra 80% de large à l'ouverture) -->
+        <!-- PANNEAU LATÉRAL DROIT (Prend 80% à l'ouverture) -->
         <div class="sidebar-panel" id="sidebarPanel">
             <div class="sidebar-header">
                 <span id="sidebarSubTitle" class="sidebar-sub-title">Détails</span>
@@ -146,11 +155,22 @@
 
     </div> <!-- FIN CONTENEUR GLOBAL -->
 
+    <!-- SCRIPTS JAVASCRIPT GESTION SIDEBAR AVEC IMAGE DYNAMIQUE -->
     <script>
-        function openSidebar(title, sub, description) {
+        function openSidebar(title, sub, description, bgImage) {
             document.getElementById('sidebarTitle').innerText = title;
             document.getElementById('sidebarSubTitle').innerText = sub;
             document.getElementById('sidebarDescription').innerHTML = description;
+            
+            const sidebarCard = document.querySelector('.sidebar-card');
+            if (bgImage && bgImage !== '') {
+                // Charge la photo de l'entreprise avec un dégradé assombrissant pour laisser le titre lisible
+                sidebarCard.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, #1c1c1c 100%), url('${bgImage}')`;
+            } else {
+                // Remet le dégradé classique gris/noir par défaut de Spotify pour les autres sections
+                sidebarCard.style.backgroundImage = 'linear-gradient(to bottom, #434343 0%, #1c1c1c 100%)';
+            }
+            
             document.getElementById('sidebarPanel').classList.add('active');
         }
 
