@@ -11,11 +11,12 @@ html, body {
     overflow: hidden;
 }
 
+/* On laisse de la place pour la barre du bas de 90px */
 .main-container {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 90px); 
 }
 
 .left-content {
@@ -143,7 +144,7 @@ html, body {
 }
 
 /* ==========================================================================
-   4. RANGÉES TRACKS (SURVOL DE LA COULEUR BANNIÈRE AVEC TRANSPARENCE)
+   4. RANGÉES TRACKS
    ========================================================================== */
 .tracklist-header {
     display: flex;
@@ -170,7 +171,6 @@ html, body {
     transition: background-color 0.2s ease;
 }
 
-/* Option Rose/Rouge transparent au survol (Rappel parfait) */
 .track-row:hover {
     background-color: rgba(179, 25, 66, 0.2); 
 }
@@ -205,7 +205,6 @@ html, body {
     margin-top: 4px;
 }
 
-/* Tout passe au blanc propre au survol */
 .track-row:hover .main-text,
 .track-row:hover .sub-text,
 .track-row:hover .col-num,
@@ -230,7 +229,7 @@ html, body {
 }
 
 /* ==========================================================================
-   5. PANNEAU LATÉRAL (PROPRIÉTÉ 80vw ACTIVE + BLOC ROSE FONCÉ)
+   5. PANNEAU LATÉRAL (SIDEBAR)
    ========================================================================== */
 .sidebar-panel {
     width: 0vw;            
@@ -245,7 +244,6 @@ html, body {
     overflow-y: auto;
 }
 
-/* S'active et prend 80% de la largeur de la fenêtre */
 .sidebar-panel.active {
     width: 80vw;          
     opacity: 1;
@@ -295,10 +293,9 @@ html, body {
     font-size: 48px;     
     font-weight: 800;
     margin: 0;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Sécurise la visibilité du titre blanc sur image */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
-/* Bloc "À Propos" teinté en rose foncé style Spotify */
 .sidebar-body {
     background-color: #240a10; 
     border: 1px solid rgba(179, 25, 66, 0.3); 
@@ -321,4 +318,158 @@ html, body {
     font-size: 16px;      
     color: #fce4e8; 
     line-height: 1.8;
+}
+
+/* ==========================================================================
+   6. BARRE DE LECTURE FIXED FOOTER (STYLE SPOTIFY)
+   ========================================================================== */
+.spotify-player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 90px;
+    background-color: #181818;
+    border-top: 1px solid #282828;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+
+/* Section Infos Gauche */
+.player-track-info {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    min-width: 180px;
+}
+
+.player-mini-cover {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-right: 14px;
+}
+
+.player-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.player-title {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.player-artist {
+    color: #b3b3b3;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+/* Section Commandes Centre */
+.player-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    max-width: 600px;
+}
+
+.control-buttons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 8px;
+}
+
+.player-icon-btn {
+    background: none;
+    border: none;
+    color: #b3b3b3;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+.player-icon-btn:hover { color: #ffffff; }
+
+.player-play-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+.player-play-btn:hover { transform: scale(1.06); }
+
+/* Barre de progression */
+.playback-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.time-text {
+    color: #a7a7a7;
+    font-size: 11px;
+    min-width: 30px;
+}
+
+.progress-bar-container {
+    flex: 1;
+    height: 4px;
+    background-color: #4f4f4f;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+.progress-bar-container:hover .progress-bar-fill {
+    background-color: #1db954; /* Devient verte au survol */
+}
+
+/* Section Volume Droite */
+.player-volume-zone {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
+    gap: 10px;
+}
+
+.volume-bar-container {
+    width: 100px;
+    height: 4px;
+    background-color: #4f4f4f;
+    border-radius: 2px;
+}
+
+.volume-bar-fill {
+    width: 70%;
+    height: 100%;
+    background-color: #b3b3b3;
+    border-radius: 2px;
+}
+.player-volume-zone:hover .volume-bar-fill {
+    background-color: #1db954;
 }
