@@ -472,131 +472,169 @@ html, body {
 }
 
 /* ==========================================================================
-   7. MEDIA QUERIES : POUR SMARTPHONES & TABLETTES
+   7. MEDIA QUERIES : POUR SMARTPHONES (Optimisé et Strict)
    ========================================================================== */
-@media (max-width: 768px) {
-    /* Bannière Responsive */
+@media screen and (max-width: 768px) {
+    
+    html, body {
+        position: relative !important;
+        overflow: hidden !important;
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    /* Redimensionnement adaptatif du conteneur principal */
+    .main-container {
+        height: calc(100vh - 75px) !important;
+    }
+
+    /* Bannière Responsive Mobile */
     .banner {
-        height: auto;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 30px 16px 20px 16px;
+        height: auto !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 30px 16px 20px 16px !important;
     }
 
     .album-Image {
-        width: 140px;
-        height: 140px;
-        margin-right: 0;
-        margin-bottom: 16px;
+        width: 125px !important;
+        height: 125px !important;
+        margin-right: 0 !important;
+        margin-bottom: 12px !important;
+    }
+
+    .type {
+        font-size: 11px !important;
     }
 
     .title {
-        font-size: 36px;
-        letter-spacing: -1px;
+        font-size: 32px !important; /* Réduction pour empêcher le débordement horizontal */
+        letter-spacing: -1px !important;
+        margin: 4px 0 !important;
     }
 
     .footer-info {
-        justify-content: center;
-        font-size: 12px;
+        justify-content: center !important;
+        font-size: 12px !important;
+        flex-wrap: wrap !important;
     }
 
     /* Actions et listes fluides */
     .action-bar {
-        padding: 16px;
+        padding: 12px 16px !important;
     }
 
     .tracklist-header {
-        margin: 0 16px;
+        margin: 0 16px !important;
     }
+
     .col-duration {
-        display: none;
+        display: none !important; /* Masque la durée sur petit écran */
     }
 
     .portfolio-list {
-        margin: 10px 16px;
+        margin: 5px 16px !important;
     }
 
     .track-row {
-        padding: 12px 8px;
+        padding: 14px 8px !important; /* Plus d'espace tactile */
     }
 
     .col-title {
-        padding-left: 8px;
+        padding-left: 10px !important;
+    }
+
+    .main-text {
+        font-size: 14px !important;
     }
 
     .sub-text {
-        font-size: 12px;
+        font-size: 12px !important;
+    }
+
+    /* Panneau de détails en plein écran vertical (90%) */
+    .sidebar-panel {
+        bottom: 75px !important;
     }
 
     .sidebar-panel.active {
-        height: 92vh; 
-        padding: 0 16px 24px 16px;
+        height: 90vh !important; 
+        padding: 0 16px 20px 16px !important;
+    }
+
+    .sidebar-header {
+        padding: 16px 0 !important;
     }
 
     .sidebar-main-title {
-        font-size: 28px;
+        font-size: 24px !important;
     }
 
     .sidebar-card {
-        height: 130px;
-        padding: 15px;
+        height: 110px !important;
+        padding: 15px !important;
     }
 
     .sidebar-body {
-        padding: 20px;
-        margin-top: 16px;
+        padding: 18px !important;
+        margin-top: 14px !important;
+    }
+    
+    .sidebar-body p {
+        font-size: 13.5px !important;
+        line-height: 1.6 !important;
     }
 
     /* Ajustement Barre Spotify en Bas */
     .spotify-player-bar {
-        padding: 0 12px;
-        height: 80px;
-    }
-
-    .main-container {
-        height: calc(100vh - 80px);
-    }
-    .sidebar-panel {
-        bottom: 80px;
+        padding: 0 16px !important;
+        height: 75px !important;
     }
 
     .player-track-info {
-        width: 45%;
-        min-width: 0;
+        width: 65% !important;
     }
 
     .player-mini-cover {
-        width: 40px;
-        height: 40px;
-        margin-right: 8px;
+        width: 44px !important;
+        height: 44px !important;
+        margin-right: 10px !important;
     }
 
     .player-title {
-        font-size: 12px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        font-size: 13px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
     }
 
     .player-artist {
-        display: none;
+        font-size: 11px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
     }
 
     .player-controls {
-        width: 50%;
+        width: 35% !important;
+        align-items: flex-end !important;
+    }
+
+    .control-buttons {
+        gap: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .playback-bar {
+        display: none !important; /* Retire le slider de temps sur mobile */
     }
 
     .btn-desktop-only {
         display: none !important;
     }
 
-    .control-buttons {
-        gap: 16px;
-        margin-bottom: 4px;
-    }
-
     .player-volume-zone {
-        display: none !important;
+        display: none !important; /* Volume masqué sur mobile */
     }
 }
