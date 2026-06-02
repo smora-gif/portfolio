@@ -11,7 +11,6 @@ html, body {
     overflow: hidden;
 }
 
-/* Le container principal n'utilise plus de flexbox latérale */
 .main-container {
     display: block;
     width: 100%;
@@ -231,10 +230,10 @@ html, body {
    ========================================================================== */
 .sidebar-panel {
     position: fixed;
-    bottom: 90px; /* S'ouvre juste au dessus du lecteur audio */
+    bottom: 90px; 
     left: 0;
     width: 100vw;
-    height: 0vh; /* Fermé par défaut */
+    height: 0vh; 
     opacity: 0;
     background-color: #121212;
     display: flex;
@@ -245,7 +244,6 @@ html, body {
     overflow-y: auto;
 }
 
-/* Quand il est actif, il glisse vers le haut et occupe 80% */
 .sidebar-panel.active {
     height: 80vh;          
     opacity: 1;
@@ -340,10 +338,9 @@ html, body {
     align-items: center;
     padding: 0 24px;
     box-sizing: border-box;
-    z-index: 9999; /* Reste toujours au premier plan absolu */
+    z-index: 9999; 
 }
 
-/* Section Infos Gauche */
 .player-track-info {
     display: flex;
     align-items: center;
@@ -376,7 +373,6 @@ html, body {
     margin-top: 3px;
 }
 
-/* Section Commandes Centre */
 .player-controls {
     display: flex;
     flex-direction: column;
@@ -417,7 +413,6 @@ html, body {
 }
 .player-play-btn:hover { transform: scale(1.06); }
 
-/* Barre de progression */
 .playback-bar {
     display: flex;
     align-items: center;
@@ -448,10 +443,9 @@ html, body {
 }
 
 .progress-bar-container:hover .progress-bar-fill {
-    background-color: #1db954; /* Devient verte au survol */
+    background-color: #1db954; 
 }
 
-/* Section Volume Droite */
 .player-volume-zone {
     display: flex;
     align-items: center;
@@ -475,4 +469,134 @@ html, body {
 }
 .player-volume-zone:hover .volume-bar-fill {
     background-color: #1db954;
+}
+
+/* ==========================================================================
+   7. MEDIA QUERIES : POUR SMARTPHONES & TABLETTES
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Bannière Responsive */
+    .banner {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 16px 20px 16px;
+    }
+
+    .album-Image {
+        width: 140px;
+        height: 140px;
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+
+    .title {
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+
+    .footer-info {
+        justify-content: center;
+        font-size: 12px;
+    }
+
+    /* Actions et listes fluides */
+    .action-bar {
+        padding: 16px;
+    }
+
+    .tracklist-header {
+        margin: 0 16px;
+    }
+    .col-duration {
+        display: none;
+    }
+
+    .portfolio-list {
+        margin: 10px 16px;
+    }
+
+    .track-row {
+        padding: 12px 8px;
+    }
+
+    .col-title {
+        padding-left: 8px;
+    }
+
+    .sub-text {
+        font-size: 12px;
+    }
+
+    .sidebar-panel.active {
+        height: 92vh; 
+        padding: 0 16px 24px 16px;
+    }
+
+    .sidebar-main-title {
+        font-size: 28px;
+    }
+
+    .sidebar-card {
+        height: 130px;
+        padding: 15px;
+    }
+
+    .sidebar-body {
+        padding: 20px;
+        margin-top: 16px;
+    }
+
+    /* Ajustement Barre Spotify en Bas */
+    .spotify-player-bar {
+        padding: 0 12px;
+        height: 80px;
+    }
+
+    .main-container {
+        height: calc(100vh - 80px);
+    }
+    .sidebar-panel {
+        bottom: 80px;
+    }
+
+    .player-track-info {
+        width: 45%;
+        min-width: 0;
+    }
+
+    .player-mini-cover {
+        width: 40px;
+        height: 40px;
+        margin-right: 8px;
+    }
+
+    .player-title {
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .player-artist {
+        display: none;
+    }
+
+    .player-controls {
+        width: 50%;
+    }
+
+    .btn-desktop-only {
+        display: none !important;
+    }
+
+    .control-buttons {
+        gap: 16px;
+        margin-bottom: 4px;
+    }
+
+    .player-volume-zone {
+        display: none !important;
+    }
 }

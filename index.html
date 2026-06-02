@@ -3,16 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>Portfolio - Album by Sebastian Mora</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" sizes="32x32" type="image/png" href="Images/Img1.jpg">
     <link rel="stylesheet" href="StyleAlbum.css">
 </head>
 <body>
 
-    <!-- ZONE PRINCIPALE : LE PORTFOLIO DEFILANT -->
     <div class="main-container">
         <div class="left-content">
             
-            <!-- Bannière Album -->
             <div class="banner">
                 <img src="Images/Img1.jpg" alt="Couverture Album" class="album-Image">
                 <div class="text-content">
@@ -21,12 +20,11 @@
                     <div class="footer-info">
                         <img src="Images/Img1.jpg" alt="Artiste" class="artist-thumb">
                         <span class="artist-name">Sebastian Mora</span>
-                        <span class="details"> • 2026 • 5 Tracks • 18 min 10 s</span>
+                        <span class="details"> • 2026 • 5 Tracks</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Barre d'actions -->
             <div class="action-bar">
                 <div class="left-actions">
                     <button class="play-btn" id="main-play-btn" onclick="togglePlayPauseMaster()">
@@ -47,7 +45,6 @@
                 </div>
             </div>
 
-            <!-- En-tête de liste -->
             <div class="tracklist-header">
                 <div class="col-num">#</div>
                 <div class="col-title">Titre</div>
@@ -56,11 +53,9 @@
                 </div>
             </div>
 
-            <!-- LISTE DES SECTIONS -->
             <div class="portfolio-list">
                 
-                <!-- 1 : Parcours -->
-                <div id="track-1" class="track-row" onclick="selectTrack(1, 'PARCOURS', 'Mon expérience, formations, qui suis-je?', '<strong>Présentation</strong><br>Je m\'appelle Sebastian Mora, j\'ai 23 ans et je suis actuellement étudiant en BTS SIO option SLAM au sein de l\'école Nexa Digital School.<br><br><strong>Mon Parcours & Réorientation</strong><br>Après un Baccalauréat SES (option Mathématiques), j\'ai validé deux années d\'études en psychologie. Ce premier cursus universitaire m\'a permis de développer une grande rigueur, un esprit d\'analyse affûté, ainsi qu\'une forte sensibilité à la compréhension des besoins utilisateurs (UX) — des qualités qui s\'avèrent aujourd\'hui être de véritables atouts dans l\'informatique.<br><br>Souhaitant m\'orienter vers un domaine plus technique et concret, j\'ai choisi de me réorienter avec passion vers le développement d\'applications.<br><br><strong>Mon Projet Professionnel</strong><br>Ce qui m\'anime particulièrement dans le développement de solutions logicielles, c\'est la résolution de problèmes complexes et le fait de concevoir des outils concrets et fonctionnels. C\'est un domaine stimulant dans lequel je me projette pleinement.', '')">
+                <div id="track-1" class="track-row" onclick="selectTrack(1, 'PARCOURS', 'Mon expérience, formations, qui suis-je?', '<strong>Présentation</strong><br>Je m\'appelle Sebastian Mora, j\'ai 23 ans et je suis actuellement étudiant en BTS SIO option SLAM au sein de l\'école Nexa Digital School.<br><br><strong>Mon Parcours & Réorientation</strong><br>Après un Baccalauréat SES (option Mathématiques), j\'ai validé deux années d\'études en psychologie. Ce premier cursus universitaire m\'a permis de développer une grande rigueur, un esprit d\'analyse affûté, ainsi qu\'une forte sensibilité à la compréhension des besoins utilisateurs (UX) — des qualités qui s\'avèrent aujourd\'hui être de véritables atouts dans l\'informatique.<br><br>Souhaitant m\'orienter vers un domaine plus technique et concret, j\'ai choisi de me réorienter avec passion vers le développement d\'applications.<br><br><strong>Mon Projet Professionnel</strong><br>Ce qui m\'anime particulièrement dans le développement de solutions logicielles, c\'est la résolution de problèmes complexes et le fait de concevoir des outils concrets et functionalités. C\'est un domaine stimulant dans lequel je me projette pleinement.', '')">
                     <div class="col-num">
                         <span class="num-text">1</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
@@ -72,7 +67,6 @@
                     <div class="col-duration">3:57</div>
                 </div>
 
-                <!-- Ligne 2 : Entreprise -->
                 <div id="track-2" class="track-row" onclick="selectTrack(2, 'ENTREPRISE', 'Alternant chez Everial', '<strong>Présentation & Évolution</strong><br>Everial est une entreprise spécialisée dans la gestion documentaire. Historiquement centrée sur l\'archivage physique de documents d\'entreprises, elle a opéré une transition majeure vers le digital.<br><br><strong>La Chaîne de Dématérialisation</strong><br>Aujourd\'hui, l\'entreprise s\'appuie sur une chaîne de dématérialisation complète et automatisée, couvrant tout le processus depuis la réception du document physique ou numérique jusqu\'à sa livraison finale au client au format digital.<br><br><strong>Technologies</strong><br>Pour optimiser ces flux, Everial intègre des outils de reconnaissance automatique (LAD/RAD/OCR) capables d\'extraire intelligemment les données textuelles, comme les champs d\'une facture (montants, dates, fournisseurs).<br><br><strong>Contrôle Qualité</strong><br>Afin de garantir une fiabilité maximale, une équipe dédiée à la saisie et à la vérification valide et corrige manuellement les champs insérés par les outils automatiques avant l\'envoi final.', 'Images/entreprise.png')">
                     <div class="col-num">
                         <span class="num-text">2</span>
@@ -85,7 +79,6 @@
                     <div class="col-duration">3:44</div>
                 </div>
 
-                <!-- Ligne 3 : Compétences -->
                 <div id="track-3" class="track-row" onclick="selectTrack(3, 'COMPÉTENCES', 'Tech stack, langages et outils maîtrisés', '<strong>Développement Web :</strong> HTML, CSS.<br><strong>Programmation :</strong> C#, C++.<br><strong>Bases de données :</strong> MySQL.<br><strong>Outils & Méthodes :</strong> Git, VS Code, Linux.', 'Images/competences.png')">
                     <div class="col-num">
                         <span class="num-text">3</span>
@@ -98,7 +91,6 @@
                     <div class="col-duration">3:36</div>
                 </div>
 
-                <!-- Ligne 4 : PROJETS -->
                 <div id="track-4" class="track-row" onclick="selectTrack(4, 'PROJETS', 'Projets d\'école (Kuzco, Kahoot, Tier List) et Everial', '<strong>Projets réalisés à l\'École (BTS SIO SLAM)</strong><br>• <u>Kuzco</u> : Développement d\'une page web avec un système de filtre interactif pour simuler un lama.<br>• <u>Kahoot</u> : Développement d\'une application dynamique dans le style du célèbre jeu de quiz Kahoot.<br>• <u>Tier List</u> : Développement d\'une page web interactive permettant de créer et de personnaliser sa propre tier list.<br><br><strong>Projets en Entreprise (Everial)</strong><br>• <u>Migration d\'Evicoda</u> : Migration de l\'outil interne vers une nouvelle version. Réalisation du nettoyage complet de l\'arborescence, tri et vérification des clients actifs, et mise à jour des arguments de traitements du système.<br>• <u>Écran VDC sur Xbound</u> : Développement d\'un écran spécifique au sein de l\'outil de capture Xbound et écriture du code nécessaire pour effectuer des recherches dynamiques basées sur un référentiel de données.', 'Images/csharp.png')">
                     <div class="col-num">
                         <span class="num-text">4</span>
@@ -111,7 +103,6 @@
                     <div class="col-duration">3:33</div>
                 </div>
 
-                <!-- Ligne 5 : Veille Techno -->
                 <div id="track-5" class="track-row" onclick="selectTrack(5, 'VEILLE TECHNO', 'Sujets d\'actualité, articles et innovations', 'Suivi des évolutions technologiques majeures, des vulnérabilités de sécurité, des nouveaux frameworks de développement et des innovations logicielles à travers des outils de flux RSS.', 'Images/blockchain.png')">
                     <div class="col-num">
                         <span class="num-text">5</span>
@@ -128,7 +119,6 @@
         </div>
     </div>
 
-    <!-- LE PANNEAU DE DETAILS (GLISSE DE BAS EN HAUT - 80% DE HAUTEUR) -->
     <div class="sidebar-panel" id="sidebarPanel">
         <div class="sidebar-header">
             <span id="sidebarSubTitle" class="sidebar-sub-title">Détails</span>
@@ -143,9 +133,7 @@
         </div>
     </div>
 
-    <!-- BARRE DE LECTURE ABSOLUE (FOOTER FIXE STYLE SPOTIFY) -->
     <div class="spotify-player-bar">
-        <!-- Gauche : Titre et artiste -->
         <div class="player-track-info">
             <img src="Images/Img1.jpg" alt="Miniature" class="player-mini-cover">
             <div class="player-text">
@@ -154,20 +142,16 @@
             </div>
         </div>
 
-        <!-- Centre : Boutons Audio + Barre de progression -->
         <div class="player-controls">
             <div class="control-buttons">
-                <!-- Précédent -->
-                <button class="player-icon-btn" onclick="changeTrack(-1)">
+                <button class="player-icon-btn btn-desktop-only" onclick="changeTrack(-1)">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.83 12l7.83 5.48a1 1 0 011.34-1.48V8a1 1 0 01-1.34-1.48zM3 7a1 1 0 012 0v10a1 1 0 01-2 0z"/></svg>
                 </button>
-                <!-- Play / Pause -->
                 <button class="player-play-btn" onclick="togglePlayPause()">
                     <svg id="player-play-icon" viewBox="0 0 24 24" width="20" height="20" fill="black">
                         <path d="M8 5v14l11-7z"/>
                     </svg>
                 </button>
-                <!-- Suivant -->
                 <button class="player-icon-btn" onclick="changeTrack(1)">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.17 12L4.34 6.52A1 1 0 003 8v8a1 1 0 001.34 1.48zM19 7a1 1 0 012 0v10a1 1 0 01-2 0z"/></svg>
                 </button>
@@ -181,7 +165,6 @@
             </div>
         </div>
 
-        <!-- Droite : Volume Design -->
         <div class="player-volume-zone">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="#b3b3b3"><path d="M11.25 5.586L6.664 10H3a1 1 0 00-1 1v2a1 1 0 001 1h3.664l4.586 4.414A1 1 0 0013 17.707V6.293a1 1 0 00-1.75-.707z"/></svg>
             <div class="volume-bar-container">
@@ -190,7 +173,6 @@
         </div>
     </div>
 
-    <!-- LOGIQUE JAVASCRIPT DE SYNCHRONISATION -->
     <script>
         let currentTrackId = null;
         let isPlaying = false;
@@ -232,7 +214,6 @@
         }
 
         function togglePlayPause() {
-            // CORRECTION : Si aucun projet n'est sélectionné, on simule le clic sur le premier titre (Parcours)
             if (!currentTrackId) {
                 document.getElementById('track-1').click();
                 return;
@@ -244,7 +225,6 @@
         }
 
         function togglePlayPauseMaster() {
-            // CORRECTION : Le bouton principal vert appelle aussi le premier titre s'il n'y a rien d'initialisé
             if (currentTrackId) { 
                 togglePlayPause(); 
             } else { 
