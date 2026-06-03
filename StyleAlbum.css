@@ -226,7 +226,7 @@ html, body {
 }
 
 /* ==========================================================================
-   5. PANNEAU VERTICAL (80% DE LA HAUTEUR DE L'ÉCRAN)
+   5. PANNEAU VERTICAL (SIDEBAR DÉTAILS)
    ========================================================================== */
 .sidebar-panel {
     position: fixed;
@@ -472,7 +472,7 @@ html, body {
 }
 
 /* ==========================================================================
-   7. MEDIA QUERIES : POUR SMARTPHONES (Optimisé et Strict)
+   7. MEDIA QUERIES : POUR SMARTPHONES (CORRECTION DES BUGS VISUELS)
    ========================================================================== */
 @media screen and (max-width: 768px) {
     
@@ -485,7 +485,7 @@ html, body {
 
     /* Redimensionnement adaptatif du conteneur principal */
     .main-container {
-        height: calc(100vh - 75px) !important;
+        height: calc(100vh - 80px) !important;
     }
 
     /* Bannière Responsive Mobile */
@@ -498,143 +498,106 @@ html, body {
     }
 
     .album-Image {
-        width: 125px !important;
-        height: 125px !important;
+        width: 120px !important;
+        height: 120px !important;
         margin-right: 0 !important;
         margin-bottom: 12px !important;
     }
 
-    .type {
-        font-size: 11px !important;
-    }
-
     .title {
-        font-size: 32px !important; /* Réduction pour empêcher le débordement horizontal */
+        font-size: 32px !important; 
         letter-spacing: -1px !important;
-        margin: 4px 0 !important;
     }
 
     .footer-info {
         justify-content: center !important;
         font-size: 12px !important;
-        flex-wrap: wrap !important;
     }
 
-    /* Actions et listes fluides */
-    .action-bar {
-        padding: 12px 16px !important;
-    }
+    .action-bar { padding: 12px 16px !important; }
+    .tracklist-header { margin: 0 16px !important; }
+    .col-duration { display: none !important; } /* Masque la durée globale pour aérer */
+    .portfolio-list { margin: 5px 16px !important; }
+    .track-row { padding: 14px 8px !important; }
+    .main-text { font-size: 14px !important; }
+    .sub-text { font-size: 12px !important; }
 
-    .tracklist-header {
-        margin: 0 16px !important;
-    }
-
-    .col-duration {
-        display: none !important; /* Masque la durée sur petit écran */
-    }
-
-    .portfolio-list {
-        margin: 5px 16px !important;
-    }
-
-    .track-row {
-        padding: 14px 8px !important; /* Plus d'espace tactile */
-    }
-
-    .col-title {
-        padding-left: 10px !important;
-    }
-
-    .main-text {
-        font-size: 14px !important;
-    }
-
-    .sub-text {
-        font-size: 12px !important;
-    }
-
-    /* Panneau de détails en plein écran vertical (90%) */
+    /* CORRECTION DE LA CROIX INVISIBLE (SIDEBAR MOBILE) */
     .sidebar-panel {
-        bottom: 75px !important;
+        bottom: 80px !important; /* Calé pile au-dessus de la barre de lecture */
     }
 
     .sidebar-panel.active {
-        height: 90vh !important; 
+        height: 82vh !important; /* Légèrement réduit pour laisser de l'espace en haut */
         padding: 0 16px 20px 16px !important;
     }
 
     .sidebar-header {
-        padding: 16px 0 !important;
+        padding: 12px 0 !important;
     }
 
-    .sidebar-main-title {
-        font-size: 24px !important;
+    .close-btn {
+        font-size: 36px !important; /* Agrandie pour être cliquable facilement au doigt */
+        color: #ffffff !important;   /* Forcée en blanc pour être très visible */
+        padding: 5px 10px !important;
     }
 
-    .sidebar-card {
-        height: 110px !important;
-        padding: 15px !important;
-    }
+    .sidebar-main-title { font-size: 24px !important; }
+    .sidebar-card { height: 110px !important; padding: 15px !important; }
+    .sidebar-body { padding: 18px !important; margin-top: 14px !important; }
+    .sidebar-body p { font-size: 13.5px !important; line-height: 1.6 !important; }
 
-    .sidebar-body {
-        padding: 18px !important;
-        margin-top: 14px !important;
-    }
-    
-    .sidebar-body p {
-        font-size: 13.5px !important;
-        line-height: 1.6 !important;
-    }
-
-    /* Ajustement Barre Spotify en Bas */
+    /* CORRECTION DU BOUTON PRÉCÉDENT MASQUÉ */
     .spotify-player-bar {
         padding: 0 16px !important;
-        height: 75px !important;
+        height: 80px !important;
     }
 
     .player-track-info {
-        width: 65% !important;
+        width: 55% !important; /* Réduit pour laisser de la place aux boutons */
+        min-width: 130px !important;
     }
 
     .player-mini-cover {
-        width: 44px !important;
-        height: 44px !important;
-        margin-right: 10px !important;
+        width: 40px !important;
+        height: 40px !important;
+        margin-right: 8px !important;
     }
 
     .player-title {
-        font-size: 13px !important;
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
+        font-size: 12px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
-    .player-artist {
-        font-size: 11px !important;
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-    }
+    .player-artist { font-size: 10px !important; }
 
     .player-controls {
-        width: 35% !important;
-        align-items: flex-end !important;
+        width: 45% !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 
+    /* Alignement parfait des boutons sur mobile */
     .control-buttons {
-        gap: 0 !important;
+        gap: 16px !important; /* Espace équilibré entre Précédent / Play / Suivant */
         margin-bottom: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
+    .player-icon-btn {
+        display: flex !important; /* Force l'apparition du bouton précédent et suivant */
+        color: #ffffff !important; /* Boutons blancs pour une meilleure visibilité */
     }
 
     .playback-bar {
-        display: none !important; /* Retire le slider de temps sur mobile */
-    }
-
-    .btn-desktop-only {
-        display: none !important;
+        display: none !important; /* Masque la barre de progression linéaire qui surcharge l'écran mobile */
     }
 
     .player-volume-zone {
-        display: none !important; /* Volume masqué sur mobile */
+        display: none !important; /* Masque la zone de volume */
     }
 }
