@@ -226,7 +226,7 @@ html, body {
 }
 
 /* ==========================================================================
-   5. PANNEAU VERTICAL (SIDEBAR DÉTAILS)
+   5. PANNEAU VERTICAL (SIDEBAR DÉTAILS CORRIGÉ)
    ========================================================================== */
 .sidebar-panel {
     position: fixed;
@@ -239,9 +239,13 @@ html, body {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    transition: height 0.4s cubic-bezier(0.3, 0, 0, 1), opacity 0.3s ease;
+    transition: height 0.4s cubic-bezier(0.3, 0, 0, 1), opacity 0.3s ease, visibility 0.3s;
     z-index: 999; 
     overflow-y: auto;
+    
+    /* SOLUTION CRUCIALE : Le panneau fermé est invisible pour les clics tactiles */
+    pointer-events: none; 
+    visibility: hidden;
 }
 
 .sidebar-panel.active {
@@ -249,6 +253,10 @@ html, body {
     opacity: 1;
     padding: 0 40px 40px 40px; 
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Réactive les clics uniquement quand ouvert */
+    pointer-events: auto;
+    visibility: visible;
 }
 
 .sidebar-header {
@@ -472,23 +480,20 @@ html, body {
 }
 
 /* ==========================================================================
-   7. MEDIA QUERIES : SMARTPHONES (RÉSOLUTION COMPLÈTE DU BUG DE CLIC)
+   7. MEDIA QUERIES : SMARTPHONES (NETTOYAGE MOBILE ANTI-BLOCAGE)
    ========================================================================== */
 @media screen and (max-width: 768px) {
     
-    /* Changement fondamental : "scroll" au lieu de "fixed" pour débloquer l'écran */
     html, body {
         position: relative !important;
         overflow-x: hidden !important;
         overflow-y: auto !important;
         height: 100% !important;
         width: 100% !important;
-        /* Élimine le délai de 300ms au clic propre aux vieux moteurs mobiles */
         touch-action: manipulation; 
         -webkit-tap-highlight-color: transparent;
     }
 
-    /* Le conteneur occupe l'espace au-dessus du lecteur de musique */
     .main-container {
         height: calc(100% - 90px) !important;
         width: 100% !important;
@@ -499,10 +504,9 @@ html, body {
     .left-content {
         height: 100% !important;
         overflow-y: scroll !important;
-        -webkit-overflow-scrolling: touch !important; /* Défilement fluide iOS */
+        -webkit-overflow-scrolling: touch !important;
     }
 
-    /* Ajustement de la bannière sur mobile */
     .banner {
         height: auto !important;
         min-height: 120px !important;
@@ -524,30 +528,28 @@ html, body {
     }
     
     .footer-info .details { display: none !important; }
-
     .action-bar { padding: 12px 16px !important; }
     .portfolio-list { margin: 5px 16px !important; }
     
-    /* LA ZONE DE CLIC MOBILE RE-STYLISÉE ET SÉCURISÉE */
+    /* Lignes réactives au toucher immédiat */
     .track-row { 
         padding: 18px 10px !important; 
         background-color: rgba(255, 255, 255, 0.03) !important;
         margin-bottom: 8px !important;
         border-radius: 6px !important;
-        /* Force la priorité du clic sur mobile */
         position: relative !important;
-        z-index: 10 !important;
+        z-index: 5 !important;
         pointer-events: auto !important;
     }
     
     .main-text { font-size: 15px !important; }
     .sub-text { font-size: 12.5px !important; }
 
-    /* PANNEAU SIDEBAR MOBILE (AJUSTÉ) */
+    /* Configuration Panel Mobile */
     .sidebar-panel {
         top: 0 !important; 
         bottom: 90px !important; 
-        height: calc(100% - 90px) !important;
+        height: 0vh !important; /* Par défaut fermé */
         width: 100vw !important;
     }
 
@@ -563,7 +565,6 @@ html, body {
         align-items: center;
     }
 
-    /* Bouton fermer ultra réactif */
     .close-btn {
         font-size: 38px !important; 
         color: #ffffff !important;   
@@ -584,7 +585,7 @@ html, body {
     .sidebar-body { padding: 18px !important; margin-top: 14px !important; }
     .sidebar-body p { font-size: 14px !important; line-height: 1.6 !important; }
 
-    /* LECTEUR DE MUSIQUE FOOTER MOBILE */
+    /* Player Footer Fixé */
     .spotify-player-bar {
         height: 90px !important;
         padding: 0 12px !important;
@@ -593,7 +594,7 @@ html, body {
         justify-content: space-between !important;
         align-items: center !important;
         background-color: #1c1c1c !important;
-        z-index: 99999 !important; /* Reste toujours au-dessus du reste */
+        z-index: 99999 !important; 
     }
 
     .player-track-info {
@@ -620,7 +621,6 @@ html, body {
         width: 100% !important;
     }
 
-    /* Boutons médias mobiles réactifs */
     .player-icon-btn {
         display: flex !important; 
         visibility: visible !important;
@@ -634,7 +634,6 @@ html, body {
         height: 24px !important;
     }
 
-    /* Nettoyage du superflu pour éviter les faux contacts */
     .playback-bar, .player-volume-zone, .tracklist-header {
         display: none !important; 
     }
