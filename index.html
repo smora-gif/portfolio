@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <title>Portfolio - Album by Sebastian Mora</title>
-    <!-- Le viewport est configuré pour bloquer le dézommage forcé sur mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" sizes="32x32" type="image/png" href="Images/Img1.jpg">
     <link rel="stylesheet" href="StyleAlbum.css">
@@ -104,7 +103,7 @@
                     <div class="col-duration">3:33</div>
                 </div>
 
-                <div id="track-5" class="track-row" onclick="selectTrack(5, 'VEILLE TECHNO', 'Sujets d\'actualité, articles et innovations', 'Suivi des évolutions technologiques majeures, des vulnérabilités de sécurité, des nouveaux frameworks de développement et des innovations logicielles à travers des outils de flux RSS.', 'Images/blockchain.png')">
+                <div id="track-5" class="track-row" onclick="selectTrack(5, 'VEILLE TECHNO', 'Sujets d\'actualité, articles et innovations', 'Sujets traités à l\'aide d\'outils de flux RSS sur l\'actualité tech, les innovations matérielles/logicielles et la cybersécurité.', 'Images/blockchain.png')">
                     <div class="col-num">
                         <span class="num-text">5</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
@@ -120,11 +119,9 @@
         </div>
     </div>
 
-    <!-- PANNEAU DES DÉTAILS MODIFIÉ POUR MOBILE -->
     <div class="sidebar-panel" id="sidebarPanel">
         <div class="sidebar-header">
             <span id="sidebarSubTitle" class="sidebar-sub-title">Détails</span>
-            <!-- Bouton fermer renforcé -->
             <button class="close-btn" onclick="closeSidebar()">×</button>
         </div>
         <div class="sidebar-card">
@@ -136,7 +133,6 @@
         </div>
     </div>
 
-    <!-- BARRE DE LECTURE FOOTER FIXE -->
     <div class="spotify-player-bar">
         <div class="player-track-info">
             <img src="Images/Img1.jpg" alt="Miniature" class="player-mini-cover">
@@ -148,7 +144,6 @@
 
         <div class="player-controls">
             <div class="control-buttons">
-                <!-- Suppression de la classe qui masquait ce bouton sur mobile -->
                 <button class="player-icon-btn" onclick="changeTrack(-1)">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.83 12l7.83 5.48a1 1 0 011.34-1.48V8a1 1 0 01-1.34-1.48zM3 7a1 1 0 012 0v10a1 1 0 01-2 0z"/></svg>
                 </button>
