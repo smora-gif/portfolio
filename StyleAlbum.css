@@ -472,28 +472,30 @@ html, body {
 }
 
 /* ==========================================================================
-   7. MEDIA QUERIES : POUR SMARTPHONES (CORRECTION DES BUGS VISUELS)
+   7. MEDIA QUERIES : SMARTPHONES (CORRECTION FINALE COMPATIBILITÉ CLIC)
    ========================================================================== */
 @media screen and (max-width: 768px) {
     
+    /* REMPLACEMENT DE 'fixed' PAR 'relative' : libère les clics bloqués sur mobile */
     html, body {
-        position: fixed !important; /* Force l'affichage à s'arrêter au cadre du téléphone */
+        position: relative !important;
         overflow: hidden !important;
         height: 100% !important;
-        width: 100vw !important;
+        width: 100% !important;
+        -webkit-tap-highlight-color: transparent; /* Supprime le flash bleu moche au clic */
     }
 
     .main-container {
         height: calc(100% - 90px) !important;
-        overflow-y: auto !important; /* Permet de scroller la liste de morceaux normalement */
-        -webkit-overflow-scrolling: touch;
+        overflow-y: auto !important; 
+        -webkit-overflow-scrolling: touch !important; /* Reste fluide au doigt */
     }
 
-    /* Bannière compacte pour éviter de manger l'espace vertical */
+    /* Ajustement de la bannière */
     .banner {
         height: auto !important;
-        min-height: 140px !important;
-        flex-direction: row !important; /* Alignement horizontal sur mobile */
+        min-height: 120px !important;
+        flex-direction: row !important;
         align-items: center !important;
         padding: 15px !important;
     }
@@ -514,11 +516,17 @@ html, body {
 
     .action-bar { padding: 12px 16px !important; }
     .portfolio-list { margin: 5px 16px !important; }
-    .track-row { padding: 14px 8px !important; }
+    
+    /* Ligne de musique optimisée pour être cliquée facilement au doigt */
+    .track-row { 
+        padding: 16px 8px !important; 
+        pointer-events: auto !important; /* Force le navigateur à accepter le clic */
+    }
+    
     .main-text { font-size: 14px !important; }
     .sub-text { font-size: 12px !important; }
 
-    /* FIX DE LA CROIX DE FERMETURE (SIDEBAR) */
+    /* PANNEAU SIDEBAR (CROIX ET ZONE PARFAITE) */
     .sidebar-panel {
         top: 0 !important; 
         bottom: 90px !important; 
@@ -538,20 +546,20 @@ html, body {
         align-items: center !important;
     }
 
-    /* Bouton croix avec fond contrasté pour être visible et cliquable */
+    /* Croix parfaitement visible et réactive */
     .close-btn {
-        font-size: 40px !important; 
+        font-size: 38px !important; 
         color: #ffffff !important;   
-        background-color: rgba(0,0,0,0.5) !important; 
+        background-color: rgba(0,0,0,0.6) !important; 
         border-radius: 50% !important;
-        width: 45px !important;
-        height: 45px !important;
+        width: 44px !important;
+        height: 44px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         line-height: 1 !important;
-        cursor: pointer !important;
         border: none !important;
+        pointer-events: auto !important;
     }
 
     .sidebar-main-title { font-size: 22px !important; }
@@ -559,10 +567,10 @@ html, body {
     .sidebar-body { padding: 18px !important; margin-top: 14px !important; }
     .sidebar-body p { font-size: 13.5px !important; line-height: 1.6 !important; }
 
-    /* FIX DU BOUTON PRÉCÉDENT DANS LE LECTEUR */
+    /* LECTEUR MOBILE (BOUTON PRÉCÉDENT ALIGNÉ) */
     .spotify-player-bar {
         height: 90px !important;
-        padding: 0 10px !important;
+        padding: 0 12px !important;
         display: flex !important;
         flex-direction: row !important;
         justify-content: space-between !important;
@@ -583,26 +591,25 @@ html, body {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        justify-content: center !important;
     }
 
-    /* Force l'affichage en ligne des boutons médias */
     .control-buttons {
         display: flex !important; 
         flex-direction: row !important;
         align-items: center !important;
         justify-content: center !important;
-        gap: 14px !important; 
+        gap: 16px !important; 
         width: 100% !important;
         margin-bottom: 0 !important;
     }
 
-    /* Le bouton précédent devient visible et blanc sur mobile */
+    /* Réactivation complète du bouton précédent */
     .player-icon-btn {
         display: flex !important; 
         visibility: visible !important;
         opacity: 1 !important;
         color: #ffffff !important; 
+        pointer-events: auto !important;
     }
     
     .player-icon-btn svg {
@@ -610,7 +617,7 @@ html, body {
         height: 24px !important;
     }
 
-    /* Masquage des composants superflus sur mobile */
+    /* Dissimule le reste pour gagner du contraste */
     .playback-bar, .player-volume-zone, .tracklist-header {
         display: none !important; 
     }
