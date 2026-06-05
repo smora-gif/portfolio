@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. STRUCTURES & FOND GLOBAL
-   ========================================================================== */
+/* Base de la page */
 html, body {
     background-color: #121212;
     margin: 0;
@@ -17,19 +15,171 @@ html, body {
     height: calc(100vh - 90px); 
 }
 
+/* Zone dynamique des pages */
+.view-section {
+    width: 100%;
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+}
+
 .left-content {
     width: 100%;
     height: 100%;
-    overflow-y: auto;
-    box-sizing: border-box;
 }
 
-/* ==========================================================================
-   2. BANNIÈRE ALBUM
-   ========================================================================== */
+/* 0. Partie Page d'accueil (Nouveauté) */
+.home-content {
+    padding: 24px 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-main-title {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 24px;
+}
+
+.home-shelf {
+    margin-bottom: 40px;
+}
+
+.shelf-title {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+}
+
+.spotify-card {
+    background: #181818;
+    padding: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.spotify-card:hover {
+    background: #282828;
+}
+
+.card-image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    margin-bottom: 16px;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+.circle-img {
+    border-radius: 50% !important;
+}
+
+/* Faux designs d'artistes/albums */
+.fake-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.fake-cover {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+.pink-gradient { background: linear-gradient(135deg, #ec008c, #fc6767); }
+.blue-gradient { background: linear-gradient(135deg, #00c6ff, #0072ff); }
+.gold-gradient { background: linear-gradient(135deg, #f12711, #f5af19); }
+.dark-gradient { background: linear-gradient(135deg, #2c3e50, #000000); }
+
+.card-metadata {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title-text {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-sub-text {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* Bouton play vert au survol sur PC */
+.card-play-hover {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #1ed760;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.spotify-card:hover .card-play-hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Barre de navigation haute */
+.top-nav-bar {
+    padding: 16px 32px;
+    background-color: #121212;
+}
+
+.back-home-btn {
+    background: rgba(0,0,0,0.7);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.back-home-btn:hover {
+    transform: scale(1.04);
+}
+
+/* 1. Partie Bannière */
 .banner {
     background: linear-gradient(transparent, rgba(0,0,0,0.6)), #b31942;
-    height: 300px;
+    height: 280px;
     display: flex;
     align-items: flex-end;
     padding: 20px 32px;
@@ -38,8 +188,8 @@ html, body {
 }
 
 .album-Image {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     box-shadow: 0 8px 40px rgba(0,0,0,0.6);
     margin-right: 24px;
     object-fit: cover;
@@ -82,9 +232,7 @@ html, body {
     margin-left: 4px;
 }
 
-/* ==========================================================================
-   3. BARRE D'ACTIONS
-   ========================================================================== */
+/* 2. Partie Actions (Boutons) */
 .action-bar {
     display: flex;
     justify-content: space-between;
@@ -140,9 +288,7 @@ html, body {
     font-weight: bold;
 }
 
-/* ==========================================================================
-   4. RANGÉES TRACKS
-   ========================================================================== */
+/* 3. Partie Liste des titres */
 .tracklist-header {
     display: flex;
     align-items: center;
@@ -225,9 +371,7 @@ html, body {
     margin-right: 6px;
 }
 
-/* ==========================================================================
-   5. PANNEAU VERTICAL (SIDEBAR DÉTAILS CORRIGÉ)
-   ========================================================================== */
+/* 4. Partie Panneau de détails (Sidebar) */
 .sidebar-panel {
     position: fixed;
     bottom: 90px; 
@@ -242,8 +386,6 @@ html, body {
     transition: height 0.4s cubic-bezier(0.3, 0, 0, 1), opacity 0.3s ease, visibility 0.3s;
     z-index: 999; 
     overflow-y: auto;
-    
-    /* SOLUTION CRUCIALE : Le panneau fermé est invisible pour les clics tactiles */
     pointer-events: none; 
     visibility: hidden;
 }
@@ -253,8 +395,6 @@ html, body {
     opacity: 1;
     padding: 0 40px 40px 40px; 
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    
-    /* Réactive les clics uniquement quand ouvert */
     pointer-events: auto;
     visibility: visible;
 }
@@ -329,9 +469,7 @@ html, body {
     line-height: 1.8;
 }
 
-/* ==========================================================================
-   6. BARRE DE LECTURE FOOTER FIXE (STYLE SPOTIFY)
-   ========================================================================== */
+/* 5. Partie Lecteur audio du bas */
 .spotify-player-bar {
     position: fixed;
     bottom: 0;
@@ -479,9 +617,7 @@ html, body {
     background-color: #1db954;
 }
 
-/* ==========================================================================
-   7. MEDIA QUERIES : SMARTPHONES (NETTOYAGE MOBILE ANTI-BLOCAGE)
-   ========================================================================== */
+/* 6. Partie Version Mobile (Smartphones) */
 @media screen and (max-width: 768px) {
     
     html, body {
@@ -494,17 +630,29 @@ html, body {
         -webkit-tap-highlight-color: transparent;
     }
 
-    .main-container {
+    .view-section {
         height: calc(100% - 90px) !important;
-        width: 100% !important;
-        position: relative !important;
-        overflow: hidden !important;
     }
 
-    .left-content {
-        height: 100% !important;
-        overflow-y: scroll !important;
-        -webkit-overflow-scrolling: touch !important;
+    .home-content {
+        padding: 16px !important;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    .spotify-card {
+        padding: 12px !important;
+    }
+
+    .card-title-text {
+        font-size: 14px !important;
+    }
+
+    .top-nav-bar {
+        padding: 12px 16px !important;
     }
 
     .banner {
@@ -531,7 +679,6 @@ html, body {
     .action-bar { padding: 12px 16px !important; }
     .portfolio-list { margin: 5px 16px !important; }
     
-    /* Lignes réactives au toucher immédiat */
     .track-row { 
         padding: 18px 10px !important; 
         background-color: rgba(255, 255, 255, 0.03) !important;
@@ -545,11 +692,10 @@ html, body {
     .main-text { font-size: 15px !important; }
     .sub-text { font-size: 12.5px !important; }
 
-    /* Configuration Panel Mobile */
     .sidebar-panel {
         top: 0 !important; 
         bottom: 90px !important; 
-        height: 0vh !important; /* Par défaut fermé */
+        height: 0vh !important; 
         width: 100vw !important;
     }
 
@@ -585,7 +731,6 @@ html, body {
     .sidebar-body { padding: 18px !important; margin-top: 14px !important; }
     .sidebar-body p { font-size: 14px !important; line-height: 1.6 !important; }
 
-    /* Player Footer Fixé */
     .spotify-player-bar {
         height: 90px !important;
         padding: 0 12px !important;

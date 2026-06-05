@@ -2,16 +2,109 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Portfolio - Album by Sebastian Mora</title>
+    <title>Spotify - Portfolio Edition</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <link rel="icon" sizes="32x32" type="image/png" href="Images/Img1.jpg">
     <link rel="stylesheet" href="StyleAlbum.css">
 </head>
 <body>
 
-    <div class="main-container">
+    <div id="home-view" class="view-section">
+        <div class="home-content">
+            
+            <h2 class="home-main-title">Bonjour</h2>
+
+            <div class="home-shelf">
+                <h3 class="shelf-title">Artistes populaires</h3>
+                <div class="grid-container">
+                    
+                    <div class="spotify-card artist-circle-card" onclick="navigateToAlbum()">
+                        <div class="card-image-wrap">
+                            <img src="Images/Img1.jpg" alt="Sebastian Mora" class="card-img circle-img">
+                        </div>
+                        <div class="card-metadata">
+                            <span class="card-title-text">Sebastian Mora</span>
+                            <span class="card-sub-text">Artiste</span>
+                        </div>
+                    </div>
+
+                    <div class="spotify-card artist-circle-card">
+                        <div class="card-image-wrap">
+                            <img src="Images/TheweekendAlbum.png" alt="The weekend Album cover" class="card-img circle-img">
+                        </div>
+                        <div class="card-metadata">
+                            <span class="card-title-text">The Weeknd</span>
+                            <span class="card-sub-text">Artiste</span>
+                        </div>
+                    </div>
+
+                    <div class="spotify-card artist-circle-card">
+                        <div class="card-image-wrap">
+                            <div class="fake-avatar blue-gradient"></div>
+                        </div>
+                        <div class="card-metadata">
+                            <span class="card-title-text">Daft Punk</span>
+                            <span class="card-sub-text">Artiste</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="home-shelf">
+                <h3 class="shelf-title">Écoutés récemment ou suggérés</h3>
+                <div class="grid-container">
+                    
+                    <div class="spotify-card album-square-card" onclick="navigateToAlbum()">
+                        <div class="card-image-wrap">
+                            <img src="Images/Img1.jpg" alt="Portfolio" class="card-img">
+                            <button class="card-play-hover">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="black"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                        </div>
+                        <div class="card-metadata">
+                            <span class="card-title-text">PORTFOLIO</span>
+                            <span class="card-sub-text">Sebastian Mora</span>
+                        </div>
+                    </div>
+
+                    <div class="spotify-card album-square-card">
+                        <div class="card-image-wrap">
+                            <div class="fake-cover gold-gradient"></div>
+                        </div>
+                        <div class="card-metadata">
+                            <span class="card-title-text">Random Access Memories</span>
+                            <span class="card-sub-text">Daft Punk</span>
+                        </div>
+                    </div>
+
+                    <div class="spotify-card album-square-card">
+                        <div class="card-image-wrap">
+                            <img src="Images/Starboy.png" alt="Portfolio" class="card-img"> 
+                        </div>
+                        <div class="card-metadata">
+                            <span class="card-title-text">Starboy</span>
+                            <span class="card-sub-text">The Weeknd</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="album-view" class="view-section" style="display: none;">
         <div class="left-content">
             
+            <div class="top-nav-bar">
+                <button class="back-home-btn" onclick="navigateToHome()">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+                    Accueil
+                </button>
+            </div>
+
             <div class="banner">
                 <img src="Images/Img1.jpg" alt="Couverture Album" class="album-Image">
                 <div class="text-content">
@@ -19,7 +112,7 @@
                     <h1 class="title">PORTFOLIO</h1>
                     <div class="footer-info">
                         <img src="Images/Img1.jpg" alt="Artiste" class="artist-thumb">
-                        <span class="artist-name">Sebastian Mora</span>
+                        <span class="artist-name" onclick="navigateToHome()" style="cursor:pointer; text-decoration:underline;">Sebastian Mora</span>
                         <span class="details"> • 2026 • 5 Tracks • 18 min 10 s</span>
                     </div>
                 </div>
@@ -134,7 +227,7 @@
     </div>
 
     <div class="spotify-player-bar">
-        <div class="player-track-info">
+        <div class="player-track-info" onclick="restoreAlbumView()" style="cursor: pointer;">
             <img src="Images/Img1.jpg" alt="Miniature" class="player-mini-cover">
             <div class="player-text">
                 <div id="player-current-title" class="player-title">Aucun titre sélectionné</div>
@@ -181,6 +274,26 @@
 
         const trackDurations = { 1: "3:57", 2: "3:44", 3: "3:36", 4: "3:33", 5: "3:20" };
 
+        // Navigation système
+        function navigateToAlbum() {
+            document.getElementById('home-view').style.display = 'none';
+            document.getElementById('album-view').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function navigateToHome() {
+            closeSidebar();
+            document.getElementById('album-view').style.display = 'none';
+            document.getElementById('home-view').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function restoreAlbumView() {
+            if (currentTrackId) {
+                navigateToAlbum();
+            }
+        }
+
         function selectTrack(id, title, sub, description, bgImage) {
             currentTrackId = id;
             isPlaying = true;
@@ -188,7 +301,7 @@
             openSidebar(title, sub, description, bgImage);
             
             document.getElementById('player-current-title').innerText = title;
-            document.getElementById('player-current-sub').innerText = "Sebastian Mora • " + title;
+            document.getElementById('player-current-sub').innerText = "Sebastian Mora • Portfolio";
             document.getElementById('progress-time-total').innerText = trackDurations[id];
             
             resetProgressBar();
@@ -215,6 +328,7 @@
 
         function togglePlayPause() {
             if (!currentTrackId) {
+                navigateToAlbum();
                 document.getElementById('track-1').click();
                 return;
             }
