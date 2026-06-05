@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <div id="home-view" class="view-section">
+    <div id="home-view" class="view-section home-gradient-bg">
         <div class="home-content">
             
             <h2 class="home-main-title">Bonjour</h2>
@@ -47,7 +47,8 @@
                             <span class="card-sub-text">Artiste</span>
                         </div>
                     </div>
-                     <div class="spotify-card artist-circle-card">
+
+                    <div class="spotify-card artist-circle-card">
                         <div class="card-image-wrap">
                             <img src="Images/BadBunnyArtist.png" alt="The weekend Album cover" class="card-img circle-img">
                         </div>
@@ -83,6 +84,7 @@
                         </div>
                         <div class="card-metadata">
                             <span class="card-title-text">Random Access Memories</span>
+                            <span class="card-sub-text">Daft Punk</span>
                         </div>
                     </div>
 
@@ -101,7 +103,6 @@
 
         </div>
     </div>
-
 
     <div id="album-view" class="view-section" style="display: none;">
         <div class="left-content">
@@ -282,7 +283,6 @@
 
         const trackDurations = { 1: "3:57", 2: "3:44", 3: "3:36", 4: "3:33", 5: "3:20" };
 
-        // Navigation système
         function navigateToAlbum() {
             document.getElementById('home-view').style.display = 'none';
             document.getElementById('album-view').style.display = 'block';

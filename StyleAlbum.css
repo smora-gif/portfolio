@@ -5,6 +5,7 @@ html, body {
     padding: 0;
     font-family: 'Segoe UI', Roboto, sans-serif;
     height: 100vh;
+    height: 100dvh; /* Hauteur dynamique pour mobile */
     width: 100vw;
     overflow: hidden;
 }
@@ -13,15 +14,18 @@ html, body {
     display: block;
     width: 100%;
     height: calc(100vh - 90px); 
+    height: calc(100dvh - 90px);
 }
 
-/* Zone dynamique des pages */
+/* Zone dynamique des pages - Le dégradé immersif global est appliqué ici */
 .view-section {
     width: 100%;
     height: calc(100vh - 90px);
+    height: calc(100dvh - 90px);
     overflow-y: auto;
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
+    background: linear-gradient(to bottom, #1e1e2f 0%, #121212 50%);
 }
 
 .left-content {
@@ -29,56 +33,70 @@ html, body {
     height: 100%;
 }
 
-/* 0. Partie Page d'accueil (Nouveauté) */
+/* 0. Partie Page d'accueil (Ajustée pour occuper tout l'espace disponible) */
 .home-content {
-    padding: 24px 32px;
-    max-width: 1200px;
+    padding: 32px;
+    max-width: 1400px; /* Légèrement élargi pour un rendu plus aéré sur grand écran */
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .home-main-title {
     color: white;
     font-size: 32px;
     font-weight: 700;
-    margin-top: 20px;
-    margin-bottom: 24px;
+    margin-top: 10px;
+    margin-bottom: 28px;
+    letter-spacing: -0.5px;
 }
 
 .home-shelf {
     margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .shelf-title {
     color: white;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    letter-spacing: -0.3px;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 24px;
+    gap: 20px;
 }
 
+/* Cartes Spotify au look moderne */
 .spotify-card {
-    background: #181818;
-    padding: 16px;
+    background: #17171c;
+    padding: 14px;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .spotify-card:hover {
-    background: #282828;
+    background: #22222e;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .card-image-wrap {
     position: relative;
     width: 100%;
     aspect-ratio: 1/1;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    border-radius: 6px;
 }
 
 .card-img {
@@ -86,11 +104,17 @@ html, body {
     height: 100%;
     object-fit: cover;
     border-radius: 6px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+
+/* Effet de zoom sur l'image au survol de la carte */
+.spotify-card:hover .card-img {
+    transform: scale(1.04);
 }
 
 .circle-img {
-    border-radius: 50% !important;
+    border-radius: 50%;
 }
 
 /* Faux designs d'artistes/albums */
@@ -98,12 +122,22 @@ html, body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    transition: transform 0.3s ease;
 }
+.spotify-card:hover .fake-avatar {
+    transform: scale(1.04);
+}
+
 .fake-cover {
     width: 100%;
     height: 100%;
     border-radius: 6px;
+    transition: transform 0.3s ease;
 }
+.spotify-card:hover .fake-cover {
+    transform: scale(1.04);
+}
+
 .pink-gradient { background: linear-gradient(135deg, #ec008c, #fc6767); }
 .blue-gradient { background: linear-gradient(135deg, #00c6ff, #0072ff); }
 .gold-gradient { background: linear-gradient(135deg, #f12711, #f5af19); }
@@ -116,7 +150,7 @@ html, body {
 
 .card-title-text {
     color: white;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -124,16 +158,17 @@ html, body {
 }
 
 .card-sub-text {
-    color: #b3b3b3;
-    font-size: 14px;
-    margin-top: 4px;
+    color: #a7a7a7;
+    font-size: 13px;
+    margin-top: 6px;
+    line-height: 1.4;
 }
 
 /* Bouton play vert au survol sur PC */
 .card-play-hover {
     position: absolute;
-    bottom: 8px;
-    right: 8px;
+    bottom: 12px;
+    right: 12px;
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -144,8 +179,9 @@ html, body {
     justify-content: center;
     opacity: 0;
     transform: translateY(8px);
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transition: all 0.3s cubic-bezier(0.3, 0, 0, 1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    z-index: 2;
 }
 
 .spotify-card:hover .card-play-hover {
@@ -153,27 +189,34 @@ html, body {
     transform: translateY(0);
 }
 
+.card-play-hover:hover {
+    transform: scale(1.06);
+    background: #1fdf64;
+}
+
 /* Barre de navigation haute */
 .top-nav-bar {
     padding: 16px 32px;
-    background-color: #121212;
+    background-color: transparent; /* Mis en transparent pour laisser voir le dégradé de fond */
 }
 
 .back-home-btn {
-    background: rgba(0,0,0,0.7);
+    background: rgba(255,255,255,0.08);
     border: none;
     color: white;
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 700;
     font-size: 14px;
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
+    transition: transform 0.2s ease, background-color 0.2s;
 }
 .back-home-btn:hover {
     transform: scale(1.04);
+    background: rgba(255,255,255,0.15);
 }
 
 /* 1. Partie Bannière */
@@ -234,10 +277,10 @@ html, body {
 
 /* 2. Partie Actions (Boutons) */
 .action-bar {
+    padding: 20px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 32px;
 }
 
 .left-actions {
@@ -352,7 +395,7 @@ html, body {
 .track-row:hover .sub-text,
 .track-row:hover .col-num,
 .track-row:hover .col-duration {
-    color: #ffffff !important;
+    color: #ffffff;
 }
 
 .col-duration {
@@ -377,7 +420,7 @@ html, body {
     bottom: 90px; 
     left: 0;
     width: 100vw;
-    height: 0vh; 
+    height: 0; 
     opacity: 0;
     background-color: #121212;
     display: flex;
@@ -449,7 +492,7 @@ html, body {
     background-color: #240a10; 
     border: 1px solid rgba(179, 25, 66, 0.3); 
     margin-top: 24px;
-    padding: 30px;             
+    padding: 30px;            
     border-radius: 12px;       
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); 
 }
@@ -621,165 +664,170 @@ html, body {
 @media screen and (max-width: 768px) {
     
     html, body {
-        position: relative !important;
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-        height: 100% !important;
-        width: 100% !important;
-        touch-action: manipulation; 
-        -webkit-tap-highlight-color: transparent;
+        overflow: hidden; 
+        height: 100dvh;
+    }
+
+    .main-container {
+        height: calc(100dvh - 90px);
     }
 
     .view-section {
-        height: calc(100% - 90px) !important;
+        height: calc(100dvh - 90px);
+        background: linear-gradient(to bottom, #1e1e2f 0%, #121212 60%);
     }
 
     .home-content {
-        padding: 16px !important;
+        padding: 16px;
+    }
+
+    .home-shelf {
+        padding: 16px;
+        margin-bottom: 24px;
     }
 
     .grid-container {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
     .spotify-card {
-        padding: 12px !important;
+        padding: 10px;
     }
 
     .card-title-text {
-        font-size: 14px !important;
+        font-size: 14px;
     }
 
     .top-nav-bar {
-        padding: 12px 16px !important;
+        padding: 12px 16px;
     }
 
     .banner {
-        height: auto !important;
-        min-height: 120px !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        padding: 15px !important;
+        height: auto;
+        min-height: 120px;
+        flex-direction: row;
+        align-items: center;
+        padding: 15px;
     }
 
     .album-Image {
-        width: 75px !important;
-        height: 75px !important;
-        margin-right: 15px !important;
-        margin-bottom: 0 !important;
+        width: 75px;
+        height: 75px;
+        margin-right: 15px;
+        margin-bottom: 0;
     }
 
     .title {
-        font-size: 26px !important; 
-        letter-spacing: -1px !important;
+        font-size: 26px; 
+        letter-spacing: -1px;
     }
     
-    .footer-info .details { display: none !important; }
-    .action-bar { padding: 12px 16px !important; }
-    .portfolio-list { margin: 5px 16px !important; }
+    .footer-info .details { display: none; }
+    .action-bar { padding: 12px 16px; }
+    .portfolio-list { margin: 5px 16px; }
     
     .track-row { 
-        padding: 18px 10px !important; 
-        background-color: rgba(255, 255, 255, 0.03) !important;
-        margin-bottom: 8px !important;
-        border-radius: 6px !important;
-        position: relative !important;
-        z-index: 5 !important;
-        pointer-events: auto !important;
+        padding: 18px 10px; 
+        background-color: rgba(255, 255, 255, 0.03);
+        margin-bottom: 8px;
+        border-radius: 6px;
+        position: relative;
+        z-index: 5;
+        pointer-events: auto;
     }
     
-    .main-text { font-size: 15px !important; }
-    .sub-text { font-size: 12.5px !important; }
+    .main-text { font-size: 15px; }
+    .sub-text { font-size: 12.5px; }
 
     .sidebar-panel {
-        top: 0 !important; 
-        bottom: 90px !important; 
-        height: 0vh !important; 
-        width: 100vw !important;
+        top: 0; 
+        bottom: 90px; 
+        height: 0; 
+        width: 100vw;
     }
 
     .sidebar-panel.active {
-        height: calc(100% - 90px) !important;
-        padding: 15px !important;
+        height: calc(100dvh - 90px);
+        padding: 15px;
     }
 
     .sidebar-header {
-        padding: 10px 0 !important;
-        display: flex !important;
-        justify-content: space-between !important;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
     }
 
     .close-btn {
-        font-size: 38px !important; 
-        color: #ffffff !important;   
-        background-color: rgba(0,0,0,0.6) !important; 
-        border-radius: 50% !important;
-        width: 44px !important;
-        height: 44px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        line-height: 1 !important;
-        border: none !important;
-        pointer-events: auto !important;
+        font-size: 38px; 
+        color: #ffffff;   
+        background-color: rgba(0,0,0,0.6); 
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        border: none;
+        pointer-events: auto;
     }
 
-    .sidebar-main-title { font-size: 22px !important; }
-    .sidebar-card { height: 100px !important; padding: 15px !important; }
-    .sidebar-body { padding: 18px !important; margin-top: 14px !important; }
-    .sidebar-body p { font-size: 14px !important; line-height: 1.6 !important; }
+    .sidebar-main-title { font-size: 22px; }
+    .sidebar-card { height: 100px; padding: 15px; }
+    .sidebar-body { padding: 18px; margin-top: 14px; }
+    .sidebar-body p { font-size: 14px; line-height: 1.6; }
 
     .spotify-player-bar {
-        height: 90px !important;
-        padding: 0 12px !important;
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        background-color: #1c1c1c !important;
-        z-index: 99999 !important; 
+        height: 90px;
+        padding: 0 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1c1c1c;
+        z-index: 99999; 
     }
 
     .player-track-info {
-        width: 45% !important; 
-        min-width: 110px !important;
+        width: 45%; 
+        min-width: 110px;
     }
     
-    .player-mini-cover { width: 42px !important; height: 42px !important; }
-    .player-title { font-size: 12px !important; }
+    .player-mini-cover { width: 42px; height: 42px; }
+    .player-title { font-size: 12px; }
 
     .player-controls {
-        width: 50% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .control-buttons {
-        display: flex !important; 
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 18px !important; 
-        width: 100% !important;
+        display: flex; 
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 18px; 
+        width: 100%;
     }
 
     .player-icon-btn {
-        display: flex !important; 
-        visibility: visible !important;
-        opacity: 1 !important;
-        color: #ffffff !important; 
-        pointer-events: auto !important;
+        display: flex; 
+        visibility: visible;
+        opacity: 1;
+        color: #ffffff; 
+        pointer-events: auto;
     }
     
     .player-icon-btn svg {
-        width: 24px !important;
-        height: 24px !important;
+        width: 24px;
+        height: 24px;
     }
 
     .playback-bar, .player-volume-zone, .tracklist-header {
-        display: none !important; 
+        display: none; 
     }
 }
