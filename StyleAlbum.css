@@ -82,6 +82,9 @@ html, body {
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.01);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    min-width: 0; 
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .spotify-card:hover {
@@ -97,6 +100,8 @@ html, body {
     margin-bottom: 14px;
     overflow: hidden;
     border-radius: 6px;
+    /* AJOUT ICI : Garantit que le conteneur ne s'étire pas */
+    max-width: 100%; 
 }
 
 .card-img {
@@ -412,6 +417,90 @@ html, body {
     padding: 1px 4px;
     border-radius: 2px;
     margin-right: 6px;
+}
+
+/* --- STRUCTURE RECTANGLES DE PROJETS INTERACTIFS --- */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 14px;
+    width: 100%;
+}
+
+.project-block {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: 12px 16px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.project-block:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.project-header-click {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.project-block-title {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.project-arrow {
+    width: 16px;
+    height: 16px;
+    fill: #b3b3b3;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-block.open .project-arrow {
+    transform: rotate(180deg);
+    fill: #1ed760;
+}
+
+/* Flexbox pour la galerie d'images masquée par défaut */
+.project-gallery-flexbox {
+    display: none;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.project-block.open .project-gallery-flexbox {
+    display: flex;
+}
+
+.project-photo-item {
+    width: calc(33.333% - 8px);
+    min-width: 140px;
+    aspect-ratio: 16/10;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-photo-item:hover img {
+    transform: scale(1.05);
 }
 
 /* 4. Partie Panneau de détails (Sidebar) */
@@ -739,6 +828,10 @@ html, body {
     
     .main-text { font-size: 15px; }
     .sub-text { font-size: 12.5px; }
+    
+    .project-photo-item {
+        width: calc(50% - 6px); /* 2 colonnes sur mobile */
+    }
 
     .sidebar-panel {
         top: 0; 
