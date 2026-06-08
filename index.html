@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Spotify - Portfolio Edition</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <link rel="icon" sizes="32x32" type="image/png" href="Images/Img1.jpg">
+    <link rel="icon" sizes="32x32" type="image/png" href="Images/Yodebebe.png">
     <link rel="stylesheet" href="StyleAlbum.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
                     
                     <div class="spotify-card artist-circle-card" onclick="navigateToAlbum()">
                         <div class="card-image-wrap">
-                            <img src="Images/Img1.jpg" alt="Sebastian Mora" class="card-img circle-img">
+                            <img src="Images/PhotoArtist.jpeg" alt="Sebastian Mora" class="card-img circle-img">
                         </div>
                         <div class="card-metadata">
                             <span class="card-title-text">Sebastian Mora</span>
@@ -67,7 +67,7 @@
                     
                     <div class="spotify-card album-square-card" onclick="navigateToAlbum()">
                         <div class="card-image-wrap">
-                            <img src="Images/Img1.jpg" alt="Portfolio" class="card-img">
+                            <img src="Images/Yodebebe.png" alt="Portfolio" class="card-img">
                             <button class="card-play-hover">
                                 <svg viewBox="0 0 24 24" width="24" height="24" fill="black"><path d="M8 5v14l11-7z"/></svg>
                             </button>
@@ -115,14 +115,14 @@
             </div>
 
             <div class="banner">
-                <img src="Images/Img1.jpg" alt="Couverture Album" class="album-Image">
+                <img src="Images/Yodebebe.png" alt="Couverture Album" class="album-Image">
                 <div class="text-content">
                     <span class="type">Album</span>
                     <h1 class="title">PORTFOLIO</h1>
                     <div class="footer-info">
-                        <img src="Images/Img1.jpg" alt="Artiste" class="artist-thumb">
+                        <img src="Images/Yodebebe.png" alt="Artiste" class="artist-thumb">
                         <span class="artist-name" onclick="navigateToHome()" style="cursor:pointer; text-decoration:underline;">Sebastian Mora</span>
-                        <span class="details"> • 2026 • 5 Tracks • 18 min 10 s</span>
+                        <span class="details"> • 2026 • 6 Tracks • 21 min 15 s</span>
                     </div>
                 </div>
             </div>
@@ -217,6 +217,18 @@
                     <div class="col-duration">3:20</div>
                 </div>
 
+                <div id="track-6" class="track-row" onclick="selectTrack(6, 'TABLEAU DE SYNTHÈSE', 'Document officiel E5 - Réalisations professionnelles', '<strong>Aperçu du document</strong><br><br><img src=\'Images/tableau-e5.png\' alt=\'Aperçu Tableau de Synthèse\' style=\'width:100%; border-radius:4px; margin-bottom:15px; border:1px solid #333;\'><a href=\'Images/MORA Sebastian - E5---------.pdf\' target=\'_blank\' style=\'display: inline-flex; align-items: center; background-color: #1ed760; color: black; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 50px; font-size: 14px; margin-top: 10px; transition: transform 0.2s;\' onmouseover=\'this.style.transform=\'scale(1.04)\'\' onmouseout=\'this.style.transform=\'scale(1)\'\'><svg width=\'16\' height=\'16\' viewBox=\'0 0 24 24\' fill=\'black\' style=\'margin-right:8px;\'><path d=\'M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z\'/></svg>OUVRIR LE DOCUMENT COMPLET (PDF)</a>', 'NONE')">
+                    <div class="col-num">
+                        <span class="num-text">6</span>
+                        <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
+                    </div>
+                    <div class="col-title">
+                        <div class="main-text">TABLEAU DE SYNTHÈSE</div>
+                        <div class="sub-text">Document officiel E5 - Réalisations professionnelles</div>
+                    </div>
+                    <div class="col-duration">3:05</div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -237,7 +249,7 @@
 
     <div class="spotify-player-bar">
         <div class="player-track-info" onclick="restoreAlbumView()" style="cursor: pointer;">
-            <img src="Images/Img1.jpg" alt="Miniature" class="player-mini-cover">
+            <img src="Images/Yodebebe.png" alt="Miniature" class="player-mini-cover">
             <div class="player-text">
                 <div id="player-current-title" class="player-title">Aucun titre sélectionné</div>
                 <div id="player-current-sub" class="player-artist">Sebastian Mora</div>
@@ -281,7 +293,7 @@
         let progressInterval = null;
         let currentProgressPercent = 0;
 
-        const trackDurations = { 1: "3:57", 2: "3:44", 3: "3:36", 4: "3:33", 5: "3:20" };
+        const trackDurations = { 1: "3:57", 2: "3:44", 3: "3:36", 4: "3:33", 5: "3:20", 6: "3:05" };
 
         function navigateToAlbum() {
             document.getElementById('home-view').style.display = 'none';
@@ -322,7 +334,11 @@
             document.getElementById('sidebarDescription').innerHTML = description;
             
             const sidebarCard = document.querySelector('.sidebar-card');
-            if (bgImage && bgImage !== '') {
+            
+            // Si le paramètre vaut 'NONE', on applique le dégradé neutre par défaut sans image
+            if (bgImage === 'NONE') {
+                sidebarCard.style.backgroundImage = 'linear-gradient(to bottom, #282828 0%, #1c1c1c 100%)';
+            } else if (bgImage && bgImage !== '') {
                 sidebarCard.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, #1c1c1c 100%), url('${bgImage}')`;
             } else {
                 sidebarCard.style.backgroundImage = 'linear-gradient(to bottom, #434343 0%, #1c1c1c 100%)';
@@ -372,7 +388,7 @@
         function changeTrack(direction) {
             if (!currentTrackId) return;
             let nextId = currentTrackId + direction;
-            if (nextId >= 1 && nextId <= 5) {
+            if (nextId >= 1 && nextId <= 6) {
                 document.getElementById(`track-${nextId}`).click();
             }
         }
