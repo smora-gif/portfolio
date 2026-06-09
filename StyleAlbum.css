@@ -924,3 +924,39 @@ html, body {
         display: none; 
     }
 }
+/* Style pour le bouton vert (Style Spotify) */
+.download-doc-btn {
+    background-color: #1ed760;
+    color: #000000;
+    border: none;
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+}
+
+.download-doc-btn:hover {
+    transform: scale(1.04);
+    background-color: #1fdf64;
+}
+
+/* Encadrement et style de l'image de l'aperçu */
+.pdf-preview-box {
+    margin-top: 10px;
+    max-width: 450px; /* Changé de 300px à 450px pour agrandir le document */
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.preview-doc-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

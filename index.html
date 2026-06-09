@@ -228,6 +228,17 @@
                     </div>
                     <div class="col-duration">3:05</div>
                 </div>
+                <div id="track-7" class="track-row" onclick="selectTrack(7, 'CV', 'Mon Curriculum Vitae', getCvDescription(), 'Images/ImageCV.png')">
+                    <div class="col-num">
+                        <span class="num-text">7</span>
+                        <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
+                    </div>
+                    <div class="col-title">
+                        <div class="main-text">CV</div>
+                        <div class="sub-text">Mon Curriculum Vitae</div>
+                    </div>
+                    <div class="col-duration">1:45</div>
+                </div>
 
             </div>
         </div>
@@ -482,6 +493,24 @@
                    '</div>' +
                '</div>' +
            '</div>';
+        }
+        function getCvDescription() {
+            return '<strong>Aperçu du document</strong><br><br>' +
+                // La boîte d'aperçu de l'image (Taille max fixée à 450px)
+                '<div class="pdf-preview-box">' +
+                    '<img src="Images\\ImageCV.png" alt="Aperçu du Curriculum Vitae" class="preview-doc-img">' +
+                '</div>' +
+                // Texte de description
+                '<p style="margin-top: 15px; font-size: 14px; color: #fce4e8; line-height: 1.8;">' +
+                    'Retrouvez l\'ensemble de mon parcours académique, mes expériences professionnelles ainsi que mes compétences techniques détaillées.' +
+                '</p><br>' +
+                // Bouton d'ouverture du PDF officiel
+                '<a href="Images\\Mon_CV.pdf" target="_blank" style="text-decoration: none;">' +
+                    '<button class="download-doc-btn">' +
+                        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>' +
+                        'OUVRIR LE DOCUMENT COMPLET (PDF)' +
+                    '</button>' +
+                '</a>';
         }
     </script>
 </body>
