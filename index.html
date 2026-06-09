@@ -228,7 +228,7 @@
                     </div>
                     <div class="col-duration">3:05</div>
                 </div>
-                <div id="track-7" class="track-row" onclick="selectTrack(7, 'CV', 'Mon Curriculum Vitae', getCvDescription(), 'Images/ImageCV.png')">
+                <div id="track-7" class="track-row" onclick="selectTrack(7, 'CV', 'Mon Curriculum Vitae', getCvDescription(), 'Images/ImageC.png')">
                     <div class="col-num">
                         <span class="num-text">7</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
@@ -326,6 +326,13 @@
         }
 
         function selectTrack(id, title, sub, description, bgImage) {
+            // ÉTAPE AJOUTÉE : On vérifie si c'est le mot-clé 'cv' ou 'tableau' pour charger le bon texte
+            if (description === 'cv') {
+                description = getCvDescription();
+            } else if (description === 'tableau') {
+                description = getTableauDescription();
+            }
+
             currentTrackId = id;
             isPlaying = true;
             
@@ -399,8 +406,14 @@
         function changeTrack(direction) {
             if (!currentTrackId) return;
             let nextId = currentTrackId + direction;
-            if (nextId >= 1 && nextId <= 6) {
-                document.getElementById(`track-${nextId}`).click();
+            
+            // ON CHANGE LE 6 PAR UN 7 POUR AUTORISER LE CV
+            if (nextId >= 1 && nextId <= 7) {
+                // On simule le clic sur la ligne du tableau
+                const trackElement = document.getElementById(`track-${nextId}`);
+                if (trackElement) {
+                    trackElement.click();
+                }
             }
         }
 
@@ -444,7 +457,7 @@
            '<div class="projects-container">' +
                // Bloc Kuzco
                '<div class="project-block" onclick="toggleProjectGallery(event, this)">' +
-                   '<div class="project-header-click"><span class="project-block-title">🚀 KUZCO (Système de filtre lama)</span>' +
+                   '<div class="project-header-click"><span class="project-block-title"> KUZCO (Système de filtre lama)</span>' +
                    '<svg class="project-arrow" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>' +
                    '<div class="project-gallery-flexbox">' +
                        '<div style="width:100%; color:#b3b3b3; font-size:13px; margin-bottom:10px; line-height:1.5;">' +
@@ -458,7 +471,7 @@
                '</div>' +
                // Bloc Kahoot
                '<div class="project-block" onclick="toggleProjectGallery(event, this)">' +
-                   '<div class="project-header-click"><span class="project-block-title">🎮 KAHOOT (Application dynamique de Quiz)</span>' +
+                   '<div class="project-header-click"><span class="project-block-title">KAHOOT (Application dynamique de Quiz)</span>' +
                    '<svg class="project-arrow" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>' +
                    '<div class="project-gallery-flexbox">' +
                        '<div style="width:100%; color:#b3b3b3; font-size:13px; margin-bottom:10px; line-height:1.5;">' +
@@ -472,7 +485,7 @@
                '</div>' +
                // Bloc Tier List (Modifié avec le descriptif intégré dans la flexbox)
                '<div class="project-block" onclick="toggleProjectGallery(event, this)">' +
-                   '<div class="project-header-click"><span class="project-block-title">🏆 TIER LIST (Générateur personnalisé)</span>' +
+                   '<div class="project-header-click"><span class="project-block-title"> TIER LIST (Générateur personnalisé)</span>' +
                    '<svg class="project-arrow" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>' +
                    '<div class="project-gallery-flexbox">' +
                        '<div style="width:100%; color:#b3b3b3; font-size:13px; margin-bottom:10px; line-height:1.5;">' +
@@ -485,7 +498,7 @@
                '</div>' +
                // Bloc Everial
                '<div class="project-block" onclick="toggleProjectGallery(event, this)">' +
-                   '<div class="project-header-click"><span class="project-block-title">🏢 EVERIAL (Migration & Écrans Xbound)</span>' +
+                   '<div class="project-header-click"><span class="project-block-title"> EVERIAL (Migration & Écrans Xbound)</span>' +
                    '<svg class="project-arrow" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>' +
                    '<div class="project-gallery-flexbox">' +
                        '<div class="project-photo-item"><img src="Images/everial1.png" alt="Everial 1"></div>' +
@@ -496,20 +509,12 @@
         }
         function getCvDescription() {
             return '<strong>Aperçu du document</strong><br><br>' +
-                // La boîte d'aperçu de l'image (Taille max fixée à 450px)
-                '<div class="pdf-preview-box">' +
-                    '<img src="Images\\ImageCV.png" alt="Aperçu du Curriculum Vitae" class="preview-doc-img">' +
-                '</div>' +
-                // Texte de description
-                '<p style="margin-top: 15px; font-size: 14px; color: #fce4e8; line-height: 1.8;">' +
-                    'Retrouvez l\'ensemble de mon parcours académique, mes expériences professionnelles ainsi que mes compétences techniques détaillées.' +
-                '</p><br>' +
-                // Bouton d'ouverture du PDF officiel
-                '<a href="Images\\Mon_CV.pdf" target="_blank" style="text-decoration: none;">' +
-                    '<button class="download-doc-btn">' +
-                        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>' +
-                        'OUVRIR LE DOCUMENT COMPLET (PDF)' +
-                    '</button>' +
+                // On retire la div "pdf-preview-box" pour ne plus être bridé par le CSS
+                '<img src="Images/ImageCV.png" alt="Aperçu CV" style="width:100%; border-radius:6px; margin-bottom:15px; border:1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">' +
+                '<a href="Images/MORA Sebastian - E5---------.pdf" target="_blank" style="display: inline-flex; align-items: center; background-color: #1ed760; color: black; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 50px; font-size: 14px; margin-top: 10px; transition: transform 0.2s;" onmouseover="this.style.transform=\'scale(1.04)\'" onmouseout="this.style.transform=\'scale(1)\'">' +
+                    '<svg width="16" height="16" viewBox="0 0 24 24" fill="black" style="margin-right:8px;">' +
+                        '<path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/>' +
+                    '</svg>OUVRIR LE DOCUMENT COMPLET (PDF)' +
                 '</a>';
         }
     </script>
