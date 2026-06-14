@@ -169,7 +169,7 @@
                     <div class="col-duration">3:57</div>
                 </div>
 
-                <div id="track-2" class="track-row" onclick="selectTrack(2, 'ENTREPRISE', 'Alternant chez Everial', '<strong>Présentation & Évolution</strong><br>Everial est une entreprise spécialisée dans la gestion documentaire. Historiquement centrée sur l\'archivage physique de documents d\'entreprises, elle a opéré une transition majeure vers le digital.<br><br><strong>La Chaîne de Dématérialisation</strong><br>Aujourd\'hui, l\'entreprise s\'appuie sur une chaîne de dématérialisation complète et automatisée, couvrant tout le processus depuis la réception du document physique ou numérique jusqu\'à sa livraison finale au client au format digital.<br><br><strong>Technologies</strong><br>Pour optimiser ces flux, Everial intègre des outils de reconnaissance automatique (LAD/RAD/OCR) capables d\'extraire intelligemment les données textuelles, comme les champs d\'une facture (montants, dates, fournisseurs).<br><br><strong>Contrôle Qualité</strong><br>Afin de garantir une fiabilité maximale, une équipe dédiée à la saisie et à la vérification valide et corrige manuellement les champs insérés par les outils automatiques avant l\'envoi final.', 'Images/entreprise.png')">
+                <div id="track-2" class="track-row" onclick="selectTrack(2, 'ENTREPRISE', 'Alternant chez Everial', 'entreprise', 'Images/entreprise.png')">
                     <div class="col-num">
                         <span class="num-text">2</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
@@ -181,7 +181,7 @@
                     <div class="col-duration">3:44</div>
                 </div>
 
-                <div id="track-3" class="track-row" onclick="selectTrack(3, 'COMPÉTENCES', 'Tech stack, langages et outils maîtrisés', '<strong>Développement Web :</strong> HTML, CSS.<br><strong>Programmation :</strong> C#, C++.<br><strong>Bases de données :</strong> MySQL.<br><strong>Outils & Méthodes :</strong> Git, VS Code, Linux.', 'Images/ImageCompetences.png')">
+                <div id="track-3" class="track-row" onclick="selectTrack(3, 'COMPÉTENCES', 'Tech stack, langages et outils maîtrisés', '<strong>Développement Web :</strong> HTML, CSS.<br><strong>Programmation :</strong> C#, C++.<br><strong>Bases de données :</strong> MySQL.<br><strong>Outils & Méthodes :</strong> Git, VS Code, Linux, N8N.', 'Images/ImageCompetences.png')">
                     <div class="col-num">
                         <span class="num-text">3</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
@@ -205,7 +205,7 @@
                     <div class="col-duration">3:33</div>
                 </div>
 
-                <div id="track-5" class="track-row" onclick="selectTrack(5, 'VEILLE TECHNO', 'Sujets d\'actualité, articles et innovations', 'Sujets traités à l\'aide d\'outils de flux RSS sur l\'actualité tech, les innovations matérielles/logicielles et la cybersécurité.', 'Images/blockchain.png')">
+                <div id="track-5" class="track-row" onclick="selectTrack(5, 'VEILLE TECHNO', 'Sujets d\'actualité, articles et innovations', 'veille', 'Images/blockchain.png')">
                     <div class="col-num">
                         <span class="num-text">5</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
@@ -326,8 +326,11 @@
         }
 
         function selectTrack(id, title, sub, description, bgImage) {
-            // ÉTAPE AJOUTÉE : On vérifie si c'est le mot-clé 'cv' ou 'tableau' pour charger le bon texte
-            if (description === 'cv') {
+            if (description === 'entreprise') {
+                description = getEntrepriseDescription();
+            } else if (description === 'veille') {
+                description = getVeilleDescription();
+            } else if (description === 'cv') {
                 description = getCvDescription();
             } else if (description === 'tableau') {
                 description = getTableauDescription();
@@ -516,6 +519,77 @@
                         '<path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/>' +
                     '</svg>OUVRIR LE DOCUMENT COMPLET (PDF)' +
                 '</a>';
+        }
+        function getVeilleDescription() {
+            return '<strong>Sujet N°1 : Agents IA, Coûts et Sécurité</strong><br><br>' +
+                '« L\'avènement des agents IA autonomes est une formidable opportunité pour booster notre productivité, mais l\'enthousiasme ne doit pas masquer les réalités techniques. En tant que développeur, je suis convaincu que l\'intégration de ces technologies ne peut plus se faire à l\'aveugle. Entre les risques d\'explosion des coûts liés à la surconsommation de tokens et les failles de sécurité majeures comme la prompt injection, le rôle du développeur moderne évolue. Nous ne devons plus simplement "implémenter" l\'IA, mais concevoir des architectures robustes basées sur l\'audit et l\'observabilité continue des flux LLM. »<br><br>' +
+                '<a href="https://www.journaldunet.com/solutions/dsi/1532884-agents-ia-auditer-couts-tokens-et-prompt-injection/" target="_blank" style="display: inline-flex; align-items: center; background-color: #1ed760; color: black; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 50px; font-size: 14px; margin-top: 5px; margin-bottom: 25px; transition: transform 0.2s;" onmouseover="this.style.transform=\'scale(1.04)\'" onmouseout="this.style.transform=\'scale(1)\'">' +
+                    '<svg width="16" height="16" viewBox="0 0 24 24" fill="black" style="margin-right:8px;">' +
+                        '<path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>' +
+                    '</svg>LIRE L\'ARTICLE COMPLÉMENTAIRE' +
+                '</a>' +
+                
+                // LIGNE DE SEPARATION SECTIONS
+                '<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">' +
+                
+                // ARTICLE 2 (VISION PAR ORDINATEUR)
+                '<strong>Sujet N°2 : Computer Vision &amp; Sécurité Industrielle</strong><br><br>' +
+                '« L\'application de la vision par ordinateur (Computer Vision) à la sécurité industrielle démontre le véritable impact positif que peut avoir l\'intelligence artificielle dans notre quotidien : sauver des vies et réduire les accidents de 10 %. En tant que développeur, je trouve ce cas d\'usage fascinant car il déplace le rôle de la technologie d\'un traitement passif (historiser une vidéo) vers un traitement proactif et prédictif en temps réel.<br><br>' +
+                'Cependant, la réussite d\'un tel projet ne dépend pas uniquement de la précision des modèles d\'IA, mais de l\'éthique de sa conception. L\'implémentation de fonctionnalités de protection de la vie privée — comme l\'anonymisation et le floutage des visages directement at the edge (à la source) — est selon moi indispensable. »<br><br>' +
+                '<a href="https://www.lemagit.fr/conseil/L-IA-au-service-de-la-securite-au-travail-pourquoi-et-comment" target="_blank" style="display: inline-flex; align-items: center; background-color: #1ed760; color: black; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 50px; font-size: 14px; margin-top: 5px; margin-bottom: 25px; transition: transform 0.2s;" onmouseover="this.style.transform=\'scale(1.04)\'" onmouseout="this.style.transform=\'scale(1)\'">' +
+                    '<svg width="16" height="16" viewBox="0 0 24 24" fill="black" style="margin-right:8px;">' +
+                        '<path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>' +
+                    '</svg>LIRE L\'ARTICLE COMPLÉMENTAIRE' +
+                '</a>' +
+
+                // LIGNE DE SEPARATION SECTIONS
+                '<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">' +
+
+                // ARTICLE 3 (PIRATAGE CAPIFRANCE & CYBERSECURITE)
+                '<strong>Sujet N°3 : Fuite de données Capifrance &amp; Architecture Zero Trust</strong><br><br>' +
+                '« Le piratage de Capifrance rappelle une réalité brutale en développement : la sécurité d\'une plateforme est aussi forte que son maillon le plus faible. Ici, l\'attaquant n\'a pas exploité une faille de code complexe, mais a simplement usurpé un compte légitime.<br><br>' +
+                'En tant que développeur, cela renforce ma conviction que la protection des données ne s\'arrête pas au chiffrement des bases de données. Nous devons impérativement intégrer des architectures "Zero Trust", généraliser l\'authentification multifacteur (MFA) et mettre en place des systèmes de détection d\'anomalies comportementales (comme le téléchargement anormal de fichiers JSON volumineux). La récurrence de ces attaques dans le secteur immobilier prouve que la sécurité doit être pensée dès la première ligne de code (Security by Design) et non comme une option secondaire. »<br><br>' +
+                '<a href="https://www.clubic.com/actualite-616375-le-reseau-de-conseillers-immobiliers-capifrance-victime-d-une-cyberattaque-pres-de-800-000-personnes-concernees.html" target="_blank" style="display: inline-flex; align-items: center; background-color: #1ed760; color: black; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 50px; font-size: 14px; margin-top: 5px; transition: transform 0.2s;" onmouseover="this.style.transform=\'scale(1.04)\'" onmouseout="this.style.transform=\'scale(1)\'">' +
+                    '<svg width="16" height="16" viewBox="0 0 24 24" fill="black" style="margin-right:8px;">' +
+                        '<path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>' +
+                    '</svg>LIRE L\'ARTICLE COMPLÉMENTAIRE' +
+                '</a>';
+        }
+        function getEntrepriseDescription() {
+            return '<strong>Fiche d\'identité de l\'entreprise</strong><br><br>' +
+                '• <strong>Nom :</strong> EVERIAL<br>' +
+                '• <strong>Siège social :</strong> Rillieux-la-Pape (près de Lyon)<br>' +
+                '• <strong>Chiffre d\'affaires :</strong> 51 Millions d\'euros<br>' +
+                '• <strong>Taille :</strong> 600 collaborateurs<br>' +
+                '• <strong>Présence :</strong> 12 sites en France et 4 filiales à l\'international (Canada, Suisse, Maurice, Monaco)<br><br>' +
+                
+                '<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">' +
+                
+                '<strong>Secteur d\'activité et Logiciels Propriétaires</strong><br><br>' +
+                'EVERIAL est un acteur majeur de la gestion documentaire, de l\'archivage et de la dématérialisation. Éditeur de logiciels (EVERIAL Software), l\'entreprise conçoit ses propres solutions métiers "phygitales" :<br>' +
+                '&nbsp;&nbsp;&nbsp;&nbsp;- <em>Wizidee</em> : Dédié à la capture intelligente de documents.<br>' +
+                '&nbsp;&nbsp;&nbsp;&nbsp;- <em>Enoxa</em> : Solution pour la Gestion Électronique de Documents (GED).<br><br>' +
+                
+                '<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">' +
+                
+                '<strong>Mon contexte d\'alternance et fonctions exercées</strong><br><br>' +
+                'Dans le cadre de mon parcours en BTS SIO option SLAM, j\'exerce les fonctions de Technicien d\'exploitation informatique au sein de la direction technique d\'Everial. Mon rôle est d\'assurer le bon fonctionnement et la continuité des chaînes de dématérialisation et de traitement de données (flux de documents physiques numérisés, e-mails, pièces justificatives).<br><br>' +
+                
+                '<strong>Mes Missions principales :</strong><br><br>' +
+                '• <strong>Supervision et Exploitation :</strong> Surveillance quotidienne des flux et des traitements documentaires automatisés. Identification immédiate des anomalies ou des blocages dans la chaîne de dématérialisation (rejets de lecture automatique, erreurs d\'extraction de données via l\'IA, problèmes d\'interopérabilité).<br><br>' +
+                '• <strong>Analyse d\'incidents (Debugging) :</strong> Diagnostic approfondi des pannes. Pour cela, je dispose des accès nécessaires pour analyser le code source des scripts d\'exploitation et des applications logicielles d\'Everial (comme les briques liées à la GED ou à la capture de documents).<br><br>' +
+                '• <strong>Maintenance corrective et Évolution :</strong> Résolution des incidents par la modification et l\'optimisation du code existant. Je corrige les bugs logiciels ou j\'adapte les scripts pour fluidifier le traitement des données et éviter la récurrence des erreurs.<br><br>' +
+                
+                '<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">' +
+                
+                '<strong>Historique et Évolution de la structure</strong><br><br>' +
+                'Historiquement centrée sur l\'archivage physique de documents d\'entreprises, Everial a opéré une transition majeure vers le digital.<br><br>' +
+                '<strong>La Chaîne de Dématérialisation :</strong><br>' +
+                'Aujourd\'hui, l\'entreprise s\'appuie sur une chaîne de dématérialisation complète et automatisée, couvrant tout le processus depuis la réception du document physique ou numérique jusqu\'à sa livraison finale au client au format digital.<br><br>' +
+                '<strong>Technologies utilisées :</strong><br>' +
+                'Pour optimiser ces flux, Everial intègre des outils de reconnaissance automatique (LAD/RAD/OCR) capables d\'extraire intelligemment les données textuelles, comme les champs d\'une facture (montants, dates, fournisseurs).<br><br>' +
+                '<strong>Contrôle Qualité :</strong><br>' +
+                'Afin de garantir une fiabilité maximale, une équipe dédiée à la saisie et à la vérification valide et corrige manuellement les champs insérés par les outils automatiques avant l\'envoi final.';
         }
     </script>
 </body>
