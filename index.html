@@ -18,7 +18,7 @@
                 <h3 class="shelf-title">Artistes populaires</h3>
                 <div class="grid-container">
                     
-                    <div class="spotify-card artist-circle-card" onclick="navigateToAlbum()">
+                    <div class="spotify-card artist-circle-card navigate-to-album">
                         <div class="card-image-wrap">
                             <img src="Images/PhotoArtist.jpeg" alt="Sebastian Mora" class="card-img circle-img">
                         </div>
@@ -30,7 +30,7 @@
 
                     <div class="spotify-card artist-circle-card">
                         <div class="card-image-wrap">
-                            <img src="Images/The-WeekndArtist.png" alt="The weekend Album cover" class="card-img circle-img">
+                            <img src="Images/The-WeekndArtist.png" alt="The Weeknd" class="card-img circle-img">
                         </div>
                         <div class="card-metadata">
                             <span class="card-title-text">The Weeknd</span>
@@ -40,7 +40,7 @@
 
                     <div class="spotify-card artist-circle-card">
                         <div class="card-image-wrap">
-                            <img src="Images/DaftPunkArtist.png" alt="The weekend Album cover" class="card-img circle-img">
+                            <img src="Images/DaftPunkArtist.png" alt="Daft Punk" class="card-img circle-img">
                         </div>
                         <div class="card-metadata">
                             <span class="card-title-text">Daft Punk</span>
@@ -50,7 +50,7 @@
 
                     <div class="spotify-card artist-circle-card">
                         <div class="card-image-wrap">
-                            <img src="Images/BadBunnyArtist.png" alt="The weekend Album cover" class="card-img circle-img">
+                            <img src="Images/BadBunnyArtist.png" alt="Bad Bunny" class="card-img circle-img">
                         </div>
                         <div class="card-metadata">
                             <span class="card-title-text">Bad Bunny</span>
@@ -62,13 +62,13 @@
             </div>
 
             <div class="home-shelf">
-                <h3 class="shelf-title">Écoutés récemment ou suggérés</h3>
+                <h3 class="shelf-title">&#00c9;cout&#233;s r&#233;cemment ou sugg&#233;r&#233;s</h3>
                 <div class="grid-container">
                     
-                    <div class="spotify-card album-square-card" onclick="navigateToAlbum()">
+                    <div class="spotify-card album-square-card navigate-to-album">
                         <div class="card-image-wrap">
-                            <img src="Images/Yodebebe.png" alt="Portfolio" class="card-img">
-                            <button class="card-play-hover">
+                            <img src="Images/Yodebebe.png" alt="Portfolio Sebastian Mora" class="card-img">
+                            <button class="card-play-hover" aria-label="Lire le portfolio">
                                 <svg viewBox="0 0 24 24" width="24" height="24" fill="black"><path d="M8 5v14l11-7z"/></svg>
                             </button>
                         </div>
@@ -80,7 +80,7 @@
 
                     <div class="spotify-card album-square-card">
                         <div class="card-image-wrap">
-                            <img src="Images/RandomAccessMemories.png" alt="Random Access Memories Album Cover" class="card-img">
+                            <img src="Images/RandomAccessMemories.png" alt="Random Access Memories - Daft Punk" class="card-img">
                         </div>
                         <div class="card-metadata">
                             <span class="card-title-text">Random Access Memories</span>
@@ -90,7 +90,7 @@
 
                     <div class="spotify-card album-square-card">
                         <div class="card-image-wrap">
-                            <img src="Images/Starboy.png" alt="Portfolio" class="card-img"> 
+                            <img src="Images/Starboy.png" alt="Starboy - The Weeknd" class="card-img"> 
                         </div>
                         <div class="card-metadata">
                             <span class="card-title-text">Starboy</span>
@@ -108,36 +108,36 @@
         <div class="left-content">
             
             <div class="top-nav-bar">
-                <button class="back-home-btn" onclick="navigateToHome()">
+                <button class="back-home-btn" id="btn-back-home" aria-label="Retour &#224; l'accueil">
                     <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
                     Accueil
                 </button>
             </div>
 
             <div class="banner">
-                <img src="Images/Yodebebe.png" alt="Couverture Album" class="album-Image">
+                <img src="Images/Yodebebe.png" alt="Couverture Album Portfolio" class="album-Image">
                 <div class="text-content">
                     <span class="type">Album</span>
                     <h1 class="title">PORTFOLIO</h1>
                     <div class="footer-info">
-                        <img src="Images/PhotoArtist.jpeg" alt="Artiste" class="artist-thumb">
-                        <span class="artist-name" onclick="navigateToHome()" style="cursor:pointer; text-decoration:underline;">Sebastian Mora</span>
-                        <span class="details"> • 2026 • 6 Tracks • 21 min 15 s</span>
+                        <img src="Images/PhotoArtist.jpeg" alt="Sebastian Mora" class="artist-thumb">
+                        <span class="artist-name" id="btn-restore-album" style="cursor:pointer; text-decoration:underline;">Sebastian Mora</span>
+                        <span class="details"> &#8226; 2026 &#8226; 6 Tracks &#8226; 21 min 15 s</span>
                     </div>
                 </div>
             </div>
 
             <div class="action-bar">
                 <div class="left-actions">
-                    <button class="play-btn" id="main-play-btn" onclick="togglePlayPauseMaster()" style="position: relative; z-index: 15;">
+                    <button class="play-btn" id="btn-master-play" aria-label="Lecture">
                         <svg id="master-play-icon" viewBox="0 0 24 24" width="28" height="28" fill="black">
                             <path d="M8 5v14l11-7z"/>
                         </svg>
                     </button>
-                    <button class="icon-btn circle-btn">
+                    <button class="icon-btn circle-btn" aria-label="Ajouter">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.25 12.75V19h1.5v-6.25H19v-1.5h-6.25V5h-1.5v6.25H5v1.5h6.25z"/></svg>
                     </button>
-                    <button class="icon-btn dots-btn">
+                    <button class="icon-btn dots-btn" aria-label="Plus d'options">
                         <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4.5 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm7.5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm7.5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
                     </button>
                 </div>
@@ -157,19 +157,19 @@
 
             <div class="portfolio-list">
                 
-                <div id="track-1" class="track-row" onclick="selectTrack(1, 'PARCOURS', 'Mon expérience, formations, qui suis-je?', '<strong>Présentation</strong><br>Je m\'appelle Sebastian Mora, j\'ai 24 ans et je suis actuellement étudiant en BTS SIO option SLAM (Solution Logicielle et application Métiers) au sein de l\'école Nexa Digital School.<br><br><strong>Mon Parcours & Réorientation</strong><br>Après un Baccalauréat SES (option Mathématiques), j\'ai validé deux années d\'études en psychologie. Ce premier cursus universitaire m\'a permis de développer une grande rigueur, un esprit d\'analyse affûté, ainsi qu\'une forte sensibilité à la compréhension des besoins utilisateurs (UX) — des qualités qui s\'avèrent aujourd\'hui être de véritables atouts dans l\'informatique.<br><br>Souhaitant m\'orienter vers un domaine plus technique et concret, j\'ai choisi de me réorienter avec passion vers le développement d\'applications.<br><br><strong>Mon Projet Professionnel</strong><br>Ce qui m\'anime particulièrement dans le développement de solutions logicielles, c\'est la résolution de problèmes complexes et le fait de concevoir des outils concrets et functionalités. C\'est un domaine stimulant dans lequel je me projette pleinement.', '')">
+                <div id="track-1" class="track-row" data-track-id="1" role="button" tabindex="0">
                     <div class="col-num">
                         <span class="num-text">1</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
                     </div>
                     <div class="col-title">
                         <div class="main-text">PARCOURS</div>
-                        <div class="sub-text">Mon expérience, formations, qui suis-je?</div>
+                        <div class="sub-text">Mon exp&#233;rience, formations, qui suis-je?</div>
                     </div>
                     <div class="col-duration">3:57</div>
                 </div>
 
-                <div id="track-2" class="track-row" onclick="selectTrack(2, 'ENTREPRISE', 'Alternant chez Everial', 'entreprise', 'Images/entreprise.png')">
+                <div id="track-2" class="track-row" data-track-id="2" role="button" tabindex="0">
                     <div class="col-num">
                         <span class="num-text">2</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
@@ -181,54 +181,55 @@
                     <div class="col-duration">3:44</div>
                 </div>
 
-                <div id="track-3" class="track-row" onclick="selectTrack(3, 'COMPÉTENCES', 'Tech stack, langages et outils maîtrisés', '<strong>Développement Web :</strong> HTML, CSS.<br><strong>Programmation :</strong> C#, C++.<br><strong>Bases de données :</strong> MySQL.<br><strong>Outils & Méthodes :</strong> Git, VS Code, Linux, N8N.', 'Images/ImageCompetences.png')">
+                <div id="track-3" class="track-row" data-track-id="3" role="button" tabindex="0">
                     <div class="col-num">
                         <span class="num-text">3</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
                     </div>
                     <div class="col-title">
-                        <div class="main-text">COMPÉTENCES</div>
-                        <div class="sub-text">Tech stack, langages et outils maîtrisés</div>
+                        <div class="main-text">COMP&#201;TENCES</div>
+                        <div class="sub-text">Tech stack, langages et outils ma&#238;tris&#233;s</div>
                     </div>
                     <div class="col-duration">3:36</div>
                 </div>
 
-                <div id="track-4" class="track-row" onclick="selectTrack(4, 'PROJETS', 'Projets d\'école (Kuzco, Kahoot, Tier List) et Everial', getProjetsDescription(), 'Images/ImageProjets.png')">
+                <div id="track-4" class="track-row" data-track-id="4" role="button" tabindex="0">
                     <div class="col-num">
                         <span class="num-text">4</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
                     </div>
                     <div class="col-title">
                         <div class="main-text"><span class="explicit-badge">E</span> PROJETS</div>
-                        <div class="sub-text">Projets d'école (Kuzco, Kahoot, Tier List) et Everial</div>
+                        <div class="sub-text">Projets d'&#233;cole (Kuzco, Kahoot, Tier List) et Everial</div>
                     </div>
                     <div class="col-duration">3:33</div>
                 </div>
 
-                <div id="track-5" class="track-row" onclick="selectTrack(5, 'VEILLE TECHNO', 'Sujets d\'actualité, articles et innovations', 'veille', 'Images/blockchain.png')">
+                <div id="track-5" class="track-row" data-track-id="5" role="button" tabindex="0">
                     <div class="col-num">
                         <span class="num-text">5</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
                     </div>
                     <div class="col-title">
                         <div class="main-text">VEILLE TECHNO</div>
-                        <div class="sub-text">Sujets d'actualité, articles et innovations</div>
+                        <div class="sub-text">Sujets d'actualit&#233;, articles et innovations</div>
                     </div>
                     <div class="col-duration">3:20</div>
                 </div>
 
-                <div id="track-6" class="track-row" onclick="selectTrack(6, 'TABLEAU DE SYNTHÈSE', 'Document officiel E5 - Réalisations professionnelles', '<strong>Aperçu du document</strong><br><br><img src=\'Images/tableau-e5.png\' alt=\'Aperçu Tableau de Synthèse\' style=\'width:100%; border-radius:4px; margin-bottom:15px; border:1px solid #333;\'><a href=\'Images/MORA Sebastian - E5---------.pdf\' target=\'_blank\' style=\'display: inline-flex; align-items: center; background-color: #1ed760; color: black; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 50px; font-size: 14px; margin-top: 10px; transition: transform 0.2s;\' onmouseover=\'this.style.transform=\'scale(1.04)\'\' onmouseout=\'this.style.transform=\'scale(1)\'\'><svg width=\'16\' height=\'16\' viewBox=\'0 0 24 24\' fill=\'black\' style=\'margin-right:8px;\'><path d=\'M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z\'/></svg>OUVRIR LE DOCUMENT COMPLET (PDF)</a>', 'NONE')">
+                <div id="track-6" class="track-row" data-track-id="6" role="button" tabindex="0">
                     <div class="col-num">
                         <span class="num-text">6</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
                     </div>
                     <div class="col-title">
-                        <div class="main-text">TABLEAU DE SYNTHÈSE</div>
-                        <div class="sub-text">Document officiel E5 - Réalisations professionnelles</div>
+                        <div class="main-text">TABLEAU DE SYNTH&#200;SE</div>
+                        <div class="sub-text">Document officiel E5 - R&#233;alisations professionnelles</div>
                     </div>
                     <div class="col-duration">3:05</div>
                 </div>
-                <div id="track-7" class="track-row" onclick="selectTrack(7, 'CV', 'Mon Curriculum Vitae', getCvDescription(), 'Images/ImageC.png')">
+
+                <div id="track-7" class="track-row" data-track-id="7" role="button" tabindex="0">
                     <div class="col-num">
                         <span class="num-text">7</span>
                         <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
@@ -246,38 +247,38 @@
 
     <div class="sidebar-panel" id="sidebarPanel">
         <div class="sidebar-header">
-            <span id="sidebarSubTitle" class="sidebar-sub-title">Détails</span>
-            <button class="close-btn" onclick="closeSidebar()">×</button>
+            <span id="sidebarSubTitle" class="sidebar-sub-title">D&#233;tails</span>
+            <button class="close-btn" id="btn-close-sidebar" aria-label="Fermer le panneau">&#215;</button>
         </div>
         <div class="sidebar-card">
             <h2 id="sidebarTitle" class="sidebar-main-title">Section</h2>
         </div>
         <div class="sidebar-body">
-            <h3>À propos</h3>
-            <p id="sidebarDescription">Sélectionnez une section pour afficher les détails ici.</p>
+            <h3>&#192; propos</h3>
+            <p id="sidebarDescription">S&#233;lectionnez une section pour afficher les d&#233;tails ici.</p>
         </div>
     </div>
 
     <div class="spotify-player-bar">
-        <div class="player-track-info" onclick="restoreAlbumView()" style="cursor: pointer;">
+        <div class="player-track-info" id="btn-restore-player" style="cursor: pointer;">
             <img src="Images/Yodebebe.png" alt="Miniature" class="player-mini-cover">
             <div class="player-text">
-                <div id="player-current-title" class="player-title">Aucun titre sélectionné</div>
+                <div id="player-current-title" class="player-title">Aucun titre s&#233;lectionn&#233;</div>
                 <div id="player-current-sub" class="player-artist">Sebastian Mora</div>
             </div>
         </div>
 
         <div class="player-controls">
             <div class="control-buttons">
-                <button class="player-icon-btn" onclick="changeTrack(-1)">
+                <button class="player-icon-btn" id="btn-player-prev" aria-label="Titre pr&#233;c&#233;dent">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.83 12l7.83 5.48a1 1 0 011.34-1.48V8a1 1 0 01-1.34-1.48zM3 7a1 1 0 012 0v10a1 1 0 01-2 0z"/></svg>
                 </button>
-                <button class="player-play-btn" onclick="togglePlayPause()">
+                <button class="player-play-btn" id="btn-player-play" aria-label="Lecture">
                     <svg id="player-play-icon" viewBox="0 0 24 24" width="20" height="20" fill="black">
                         <path d="M8 5v14l11-7z"/>
                     </svg>
                 </button>
-                <button class="player-icon-btn" onclick="changeTrack(1)">
+                <button class="player-icon-btn" id="btn-player-next" aria-label="Titre suivant">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.17 12L4.34 6.52A1 1 0 003 8v8a1 1 0 001.34 1.48zM19 7a1 1 0 012 0v10a1 1 0 01-2 0z"/></svg>
                 </button>
             </div>
@@ -298,305 +299,6 @@
         </div>
     </div>
 
-    <script>
-        let currentTrackId = null;
-        let isPlaying = false;
-        let progressInterval = null;
-        let currentProgressPercent = 0;
-
-        const trackDurations = { 1: "3:57", 2: "3:44", 3: "3:36", 4: "3:33", 5: "3:20", 6: "3:05" };
-
-        function navigateToAlbum() {
-            document.getElementById('home-view').style.display = 'none';
-            document.getElementById('album-view').style.display = 'block';
-            window.scrollTo(0, 0);
-        }
-
-        function navigateToHome() {
-            closeSidebar();
-            document.getElementById('album-view').style.display = 'none';
-            document.getElementById('home-view').style.display = 'block';
-            window.scrollTo(0, 0);
-        }
-
-        function restoreAlbumView() {
-            if (currentTrackId) {
-                navigateToAlbum();
-            }
-        }
-
-        function selectTrack(id, title, sub, description, bgImage) {
-            if (description === 'entreprise') {
-                description = getEntrepriseDescription();
-            } else if (description === 'veille') {
-                description = getVeilleDescription();
-            } else if (description === 'cv') {
-                description = getCvDescription();
-            } else if (description === 'tableau') {
-                description = getTableauDescription();
-            }
-
-            currentTrackId = id;
-            isPlaying = true;
-            
-            openSidebar(title, sub, description, bgImage);
-            
-            document.getElementById('player-current-title').innerText = title;
-            document.getElementById('player-current-sub').innerText = "Sebastian Mora • Portfolio";
-            document.getElementById('progress-time-total').innerText = trackDurations[id];
-            
-            resetProgressBar();
-            updatePlayButtons(true);
-        }
-
-        function openSidebar(title, sub, description, bgImage) {
-            document.getElementById('sidebarTitle').innerText = title;
-            document.getElementById('sidebarSubTitle').innerText = sub;
-            document.getElementById('sidebarDescription').innerHTML = description;
-            
-            const sidebarCard = document.querySelector('.sidebar-card');
-            
-            // Si le paramètre vaut 'NONE', on applique le dégradé neutre par défaut sans image
-            if (bgImage === 'NONE') {
-                sidebarCard.style.backgroundImage = 'linear-gradient(to bottom, #282828 0%, #1c1c1c 100%)';
-            } else if (bgImage && bgImage !== '') {
-                sidebarCard.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, #1c1c1c 100%), url('${bgImage}')`;
-            } else {
-                sidebarCard.style.backgroundImage = 'linear-gradient(to bottom, #434343 0%, #1c1c1c 100%)';
-            }
-            document.getElementById('sidebarPanel').classList.add('active');
-        }
-
-        function closeSidebar() {
-            document.getElementById('sidebarPanel').classList.remove('active');
-        }
-
-        function togglePlayPause() {
-            if (!currentTrackId) {
-                navigateToAlbum();
-                document.getElementById('track-1').click();
-                return;
-            }
-            isPlaying = !isPlaying;
-            updatePlayButtons(isPlaying);
-            
-            if (isPlaying) { startProgressBar(); } else { clearInterval(progressInterval); }
-        }
-
-        function togglePlayPauseMaster() {
-            if (currentTrackId) { 
-                togglePlayPause(); 
-            } else { 
-                document.getElementById('track-1').click(); 
-            }
-        }
-
-        function updatePlayButtons(playing) {
-            const playerIcon = document.getElementById('player-play-icon');
-            const masterIcon = document.getElementById('master-play-icon');
-            const pauseSVG = `<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>`;
-            const playSVG = `<path d="M8 5v14l11-7z"/>`;
-            
-            if (playing) {
-                playerIcon.innerHTML = pauseSVG;
-                masterIcon.innerHTML = pauseSVG;
-            } else {
-                playerIcon.innerHTML = playSVG;
-                masterIcon.innerHTML = playSVG;
-            }
-        }
-
-        function changeTrack(direction) {
-            if (!currentTrackId) return;
-            let nextId = currentTrackId + direction;
-            
-            // ON CHANGE LE 6 PAR UN 7 POUR AUTORISER LE CV
-            if (nextId >= 1 && nextId <= 7) {
-                // On simule le clic sur la ligne du tableau
-                const trackElement = document.getElementById(`track-${nextId}`);
-                if (trackElement) {
-                    trackElement.click();
-                }
-            }
-        }
-
-        function resetProgressBar() {
-            clearInterval(progressInterval);
-            currentProgressPercent = 0;
-            document.getElementById('player-progress').style.width = '0%';
-            document.getElementById('progress-time-current').innerText = '0:00';
-            startProgressBar();
-        }
-
-        function startProgressBar() {
-            clearInterval(progressInterval);
-            progressInterval = setInterval(() => {
-                if (currentProgressPercent < 100) {
-                    currentProgressPercent += 0.5;
-                    document.getElementById('player-progress').style.width = currentProgressPercent + '%';
-                    
-                    let totalStr = trackDurations[currentTrackId].split(':');
-                    let totalSeconds = parseInt(totalStr[0]) * 60 + parseInt(totalStr[1]);
-                    let currentSeconds = Math.floor((currentProgressPercent / 100) * totalSeconds);
-                    let mins = Math.floor(currentSeconds / 60);
-                    let secs = currentSeconds % 60;
-                    document.getElementById('progress-time-current').innerText = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-                } else {
-                    clearInterval(progressInterval);
-                    changeTrack(1);
-                }
-            }, 500);
-        }
-        function toggleProjectGallery(event, element) {
-            // Empêche le clic de fermer ou perturber la sidebar parente de Spotify
-            event.stopPropagation();
-    
-            // Alterne la classe 'open' sur le rectangle cliqué
-            element.classList.toggle('open');
-        }
-        function getProjetsDescription() {
-            return '<strong>Projets réalisés à l\'École (BTS SIO SLAM)</strong><br>' +
-           'Découvrez mes réalisations interactives développées au cours de ma formation :<br><br>' +
-           '<div class="projects-container">' +
-               // Bloc Kuzco
-               '<div class="project-block" onclick="toggleProjectGallery(event, this)">' +
-                   '<div class="project-header-click"><span class="project-block-title"> KUZCO (Système de filtre lama)</span>' +
-                   '<svg class="project-arrow" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>' +
-                   '<div class="project-gallery-flexbox">' +
-                       '<div style="width:100%; color:#b3b3b3; font-size:13px; margin-bottom:10px; line-height:1.5;">' +
-                           '<strong>Description :</strong> Projet de développement web basé sur les technologies HTML5, CSS3 et JavaScript. L\'objectif principal était de concevoir une application capable de répliquer de manière dynamique un filtre visuel interactif (type Snapchat) appliquant des éléments de lama sur un flux d\'image.<br>' +
-                           '<strong>Compétences clés :</strong> Intégration de maquettes, gestion du positionnement absolu/relatif pour superposer les éléments graphiques et manipulation dynamique du DOM en JavaScript.' +
-                       '</div>' +
-                       '<div class="project-photo-item"><img src="Images/KUZCO.png" alt="Kuzco 1"></div>' +
-                   '</div>' +
-               '</div>' +
-               // Bloc Kahoot
-               '<div class="project-block" onclick="toggleProjectGallery(event, this)">' +
-                    '<div class="project-header-click"><span class="project-block-title">KAHOOT (Application dynamique de Quiz)</span>' +
-                    '<svg class="project-arrow" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>' +
-                    '<div class="project-gallery-flexbox">' +
-                        '<div style="width:100%; color:#b3b3b3; font-size:13px; margin-bottom:10px; line-height:1.5;">' +
-                            '<strong>Description :</strong> Développement éducatif d\'une application de type "Kahoot" en C# (Windows Forms ou WPF) afin d\'appréhender les concepts fondamentaux de la programmation orientée objet (POO) et la création d\'interfaces graphiques. Conception et manipulation des composants graphiques (TextBox, Labels, Buttons).<br>' +
-                            '<strong>Livrables :</strong> Code source C#<br>' +
-                            '<strong>Compétences clés acquises :</strong> Manipulation des variables, gestion de l\'environnement graphique (TextBox, Labels, Buttons).' +
-                        '</div>' +
-                        '<div class="project-photo-item"><img src="Images/Kahoot.png" alt="Kahoot 1"></div>' +
-                        '<div class="project-photo-item"><img src="Images/Kahoot2.png" alt="Kahoot 2"></div>' +
-                    '</div>' +
-                '</div>' +
-               // Bloc Tier List (Modifié avec le descriptif intégré dans la flexbox)
-               '<div class="project-block" onclick="toggleProjectGallery(event, this)">' +
-                    '<div class="project-header-click"><span class="project-block-title">TIER LIST (Générateur personnalisé)</span>' +
-                    '<svg class="project-arrow" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>' +
-                    '<div class="project-gallery-flexbox">' +
-                        '<div style="width:100%; color:#b3b3b3; font-size:13px; margin-bottom:10px; line-height:1.5;">' +
-                            '<strong>Description :</strong> Conception et développement front-end d\'une application web de type "Tier List" permettant la classification visuelle d\'éléments par glisser-déposer (Drag and Drop).<br>' +
-                            '<strong>Compétences clés acquises :</strong> Fonctionnalités de glisser-déposer (Drag and Drop), structuration et alignement CSS avec Flexbox.' +
-                        '</div>' +
-                        '<div class="project-photo-item"><img src="Images/TierList.png" alt="Tier List 1"></div>' +
-                    '</div>' +
-                '</div>' +
-               // Bloc Everial
-               '<div class="project-block" onclick="toggleProjectGallery(event, this)">' +
-                    '<div class="project-header-click"><span class="project-block-title"> EVERIAL (Migration &amp; Écrans Xbound)</span>' +
-                    '<svg class="project-arrow" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>' +
-                    '<div class="project-gallery-flexbox">' +
-                        // IMAGE DE GAUCHE AVEC SA LEGENDE
-                        '<div class="project-photo-item">' +
-                            '<img src="Images/everial1.png" alt="Everial 1">' +
-                            '<div style="color: #b3b3b3; font-size: 11px; margin-top: 5px; text-align: center;">Montée d\'une nouvelle version d\'application</div>' +
-                        '</div>' +
-                        // IMAGE DE DROITE AVEC SA LEGENDE
-                        '<div class="project-photo-item">' +
-                            '<img src="Images/everial2.png" alt="Everial 2">' +
-                            '<div style="color: #b3b3b3; font-size: 11px; margin-top: 5px; text-align: center;">Écran pour l\'équipe de saisie</div>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>' +
-                '</div>';
-        }
-        function getCvDescription() {
-            return '<strong>Aperçu du document</strong><br><br>' +
-                // On retire la div "pdf-preview-box" pour ne plus être bridé par le CSS
-                '<img src="Images/ImageCV.png" alt="Aperçu CV" style="width:100%; border-radius:6px; margin-bottom:15px; border:1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">' +
-                '<a href="Images/Mon_CV.pdf" target="_blank" style="display: inline-flex; align-items: center; background-color: #1ed760; color: black; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 50px; font-size: 14px; margin-top: 10px; transition: transform 0.2s;" onmouseover="this.style.transform=\'scale(1.04)\'" onmouseout="this.style.transform=\'scale(1)\'">' +
-                    '<svg width="16" height="16" viewBox="0 0 24 24" fill="black" style="margin-right:8px;">' +
-                        '<path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/>' +
-                    '</svg>OUVRIR LE DOCUMENT COMPLET (PDF)' +
-                '</a>';
-        }
-        function getVeilleDescription() {
-            return '<strong>Sujet N°1 : L\'introduction en bourse des géants de l\'IA</strong><br><br>' +
-                'Le passage d\'une ère d\'expérimentation quasi-scientifique à celle d\'une logique de marché traditionnelle dictée par Wall Street. Selon moi, l\'introduction en bourse d\'OpenAI et d\'Anthropic représente un double défi pour les directions informatiques (DSI). D\'un côté, la pression des actionnaires va inévitablement rationaliser l\'offre à travers des hausses de prix et des modèles contractuels plus rigides. De l\'autre, cette maturité forcée offre une opportunité majeure : elle va pousser les entreprises à structurer leur gouvernance de l\'IA.<br><br>' +
-                '<a href="https://www.lemondeinformatique.fr/actualites/lire-les-ipo-d-openai-et-anthropic-une-mauvaise-nouvelle-pour-les-budgets-it-100414.html" target="_blank" style="display: inline-flex; align-items: center; background-color: #1ed760; color: black; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 50px; font-size: 14px; margin-top: 5px; margin-bottom: 25px; transition: transform 0.2s;" onmouseover="this.style.transform=\'scale(1.04)\'" onmouseout="this.style.transform=\'scale(1)\'">' +
-                    '<svg width="16" height="16" viewBox="0 0 24 24" fill="black" style="margin-right:8px;">' +
-                        '<path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>' +
-                    '</svg>LIRE L\'ARTICLE COMPLÉMENTAIRE' +
-                '</a>' +
-                
-                // LIGNE DE SEPARATION SECTIONS
-                '<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">' +
-                
-                // ARTICLE 2 (VISION PAR ORDINATEUR)
-                '<strong>Sujet N°2 : Campagne TrapDoor et sécurité de la Supply Chain</strong><br><br>' +
-                'La campagne TrapDoor illustre une évolution inquiétante et majeure des attaques sur la supply chain (chaîne d\'approvisionnement logicielle). Ce que je trouve particulièrement marquant, c\'est que les cybercriminels ne se contentent plus de dissimuler du code malveillant ; ils conçoivent désormais une ingénierie sociale technique en manipulant les fichiers de configuration des assistants de codage IA.<br><br>' +
-                'En militarisant (ou en détournant) les outils mêmes censés améliorer la productivité des développeurs, les attaquants ouvrent un nouveau front de vulnérabilité. Cela montre à quel point la sécurité des environnements devient de plus en plus complexe à mesure que les technologies évoluent.<br><br>' +
-                '<a href="https://www.cryptotimes.io/2026/05/25/trapdoor-malware-hits-npm-pypi-crates-io-steals-crypto-wallets-ssh-keys/" target="_blank" style="display: inline-flex; align-items: center; background-color: #1ed760; color: black; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 50px; font-size: 14px; margin-top: 5px; margin-bottom: 25px; transition: transform 0.2s;" onmouseover="this.style.transform=\'scale(1.04)\'" onmouseout="this.style.transform=\'scale(1)\'">' +
-                    '<svg width="16" height="16" viewBox="0 0 24 24" fill="black" style="margin-right:8px;">' +
-                        '<path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>' +
-                    '</svg>LIRE L\'ARTICLE COMPLÉMENTAIRE' +
-                '</a>' +
-
-                // LIGNE DE SEPARATION SECTIONS
-                '<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">' +
-
-                // ARTICLE 3 (PIRATAGE CAPIFRANCE & CYBERSECURITE)
-                '<strong>Sujet N°3 : Fuite de données Capifrance &amp; Architecture Zero Trust</strong><br><br>' +
-                '« Le piratage de Capifrance rappelle une réalité brutale en développement : la sécurité d\'une plateforme est aussi forte que son maillon le plus faible. Ici, l\'attaquant n\'a pas exploité une faille de code complexe, mais a simplement usurpé un compte légitime.<br><br>' +
-                'En tant que développeur, cela renforce ma conviction que la protection des données ne s\'arrête pas au chiffrement des bases de données. Nous devons impérativement intégrer des architectures "Zero Trust", généraliser l\'authentification multifacteur (MFA) et mettre en place des systèmes de détection d\'anomalies comportementales (comme le téléchargement anormal de fichiers JSON volumineux). La récurrence de ces attaques dans le secteur immobilier prouve que la sécurité doit être pensée dès la première ligne de code (Security by Design) et non comme une option secondaire. »<br><br>' +
-                '<a href="https://www.clubic.com/actualite-616375-le-reseau-de-conseillers-immobiliers-capifrance-victime-d-une-cyberattaque-pres-de-800-000-personnes-concernees.html" target="_blank" style="display: inline-flex; align-items: center; background-color: #1ed760; color: black; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 50px; font-size: 14px; margin-top: 5px; transition: transform 0.2s;" onmouseover="this.style.transform=\'scale(1.04)\'" onmouseout="this.style.transform=\'scale(1)\'">' +
-                    '<svg width="16" height="16" viewBox="0 0 24 24" fill="black" style="margin-right:8px;">' +
-                        '<path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>' +
-                    '</svg>LIRE L\'ARTICLE COMPLÉMENTAIRE' +
-                '</a>';
-        }
-        function getEntrepriseDescription() {
-            return '<strong>Fiche d\'identité de l\'entreprise</strong><br><br>' +
-                '• <strong>Nom :</strong> EVERIAL<br>' +
-                '• <strong>Siège social :</strong> Rillieux-la-Pape (près de Lyon)<br>' +
-                '• <strong>Chiffre d\'affaires :</strong> 51 Millions d\'euros<br>' +
-                '• <strong>Taille :</strong> 600 collaborateurs<br>' +
-                '• <strong>Présence :</strong> 12 sites en France et 4 filiales à l\'international (Canada, Suisse, Maurice, Monaco)<br><br>' +
-                
-                '<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">' +
-
-                '<strong>Historique et Évolution de la structure</strong><br><br>' +
-                'Historiquement centrée sur l\'archivage physique de documents d\'entreprises, Everial a opéré une transition majeure vers le digital.<br><br>' +
-                '<strong>La Chaîne de Dématérialisation :</strong><br>' +
-                'Aujourd\'hui, l\'entreprise s\'appuie sur une chaîne de dématérialisation complète et automatisée, couvrant tout le processus depuis la réception du document physique ou numérique jusqu\'à sa livraison finale au client au format digital.<br><br>' +
-                '<strong>Technologies utilisées :</strong><br>' +
-                'Pour optimiser ces flux, Everial intègre des outils de reconnaissance automatique (LAD/RAD/OCR) capables d\'extraire intelligemment les données textuelles, comme les champs d\'une facture (montants, dates, fournisseurs).<br><br>' +
-                '<strong>Contrôle Qualité :</strong><br>' +
-                'Afin de garantir une fiabilité maximale, une équipe dédiée à la saisie et à la vérification valide et corrige manuellement les champs insérés par les outils automatiques avant l\'envoi final.' +
-                
-                '<strong>Secteur d\'activité et Logiciels Propriétaires</strong><br><br>' +
-                'EVERIAL est un acteur majeur de la gestion documentaire, de l\'archivage et de la dématérialisation. Éditeur de logiciels (EVERIAL Software), l\'entreprise conçoit ses propres solutions métiers "phygitales" :<br>' +
-                '&nbsp;&nbsp;&nbsp;&nbsp;- <em>Wizidee</em> : Dédié à la capture intelligente de documents.<br>' +
-                '&nbsp;&nbsp;&nbsp;&nbsp;- <em>Enoxa</em> : Solution pour la Gestion Électronique de Documents (GED).<br><br>' +
-                
-                '<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">' +
-                
-                '<strong>Mon contexte d\'alternance et fonctions exercées</strong><br><br>' +
-                'Dans le cadre de mon parcours en BTS SIO option SLAM, j\'exerce les fonctions de Technicien d\'exploitation informatique au sein de la direction technique d\'Everial. Mon rôle est d\'assurer le bon fonctionnement et la continuité des chaînes de dématérialisation et de traitement de données (flux de documents physiques numérisés, e-mails, pièces justificatives).<br><br>' +
-                
-                '<strong>Mes Missions principales :</strong><br><br>' +
-                '• <strong>Supervision et Exploitation :</strong> Surveillance quotidienne des flux et des traitements documentaires automatisés. Identification immédiate des anomalies ou des blocages dans la chaîne de dématérialisation (rejets de lecture automatique, erreurs d\'extraction de données via l\'IA, problèmes d\'interopérabilité).<br><br>' +
-                '• <strong>Analyse d\'incidents (Debugging) :</strong> Diagnostic approfondi des pannes. Pour cela, je dispose des accès nécessaires pour analyser le code source des scripts d\'exploitation et des applications logicielles d\'Everial (comme les briques liées à la GED ou à la capture de documents).<br><br>' +
-                '• <strong>Maintenance corrective et Évolution :</strong> Résolution des incidents par la modification et l\'optimisation du code existant. Je corrige les bugs logiciels ou j\'adapte les scripts pour fluidifier le traitement des données et éviter la récurrence des erreurs.<br><br>' +
-                
-                '<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">';
-                
-        }
-    </script>
+    <script src="app.js" defer></script>
 </body>
 </html>

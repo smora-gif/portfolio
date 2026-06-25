@@ -126,31 +126,7 @@ html, body {
     border-radius: 50%;
 }
 
-/* Faux designs d'artistes/albums */
-.fake-avatar {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-}
-.spotify-card:hover .fake-avatar {
-    transform: scale(1.04);
-}
 
-.fake-cover {
-    width: 100%;
-    height: 100%;
-    border-radius: 6px;
-    transition: transform 0.3s ease;
-}
-.spotify-card:hover .fake-cover {
-    transform: scale(1.04);
-}
-
-.pink-gradient { background: linear-gradient(135deg, #ec008c, #fc6767); }
-.blue-gradient { background: linear-gradient(135deg, #00c6ff, #0072ff); }
-.gold-gradient { background: linear-gradient(135deg, #f12711, #f5af19); }
-.dark-gradient { background: linear-gradient(135deg, #2c3e50, #000000); }
 
 .card-metadata {
     display: flex;
