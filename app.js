@@ -523,7 +523,6 @@ const VIEWS = {
                         '<p>Après un Baccalauréat SES (option Mathématiques) et deux années d\'études en psychologie, je me suis réorienté avec passion vers le développement d\'applications…</p></div>' +
                     '</div>' +
                 '</section>' +
-                shelf("Les fans aiment aussi", OTHER_ARTISTS.map((a, i) => card({ title: a.name, sub: "Artiste", img: a.img, circle: true }, i)).join("")) +
                 footerHTML() +
             '</div>' +
         '</div>';
