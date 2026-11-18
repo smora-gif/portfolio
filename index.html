@@ -2,303 +2,220 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Spotify - Portfolio Edition</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Sebastian Mora — Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Portfolio de Sebastian Mora — BTS SIO SLAM, alternant chez Everial.">
+    <meta name="theme-color" content="#000000">
     <link rel="icon" sizes="32x32" type="image/png" href="Images/Yodebebe.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="StyleAlbum.css">
+    <link rel="stylesheet" href="intro.css">
 </head>
 <body>
 
-    <div id="home-view" class="view-section home-gradient-bg">
-        <div class="home-content">
-            
-            <h2 class="home-main-title">Bonjour</h2>
-
-            <div class="home-shelf">
-                <h3 class="shelf-title">Artistes populaires</h3>
-                <div class="grid-container">
-                    
-                    <div class="spotify-card artist-circle-card navigate-to-album">
-                        <div class="card-image-wrap">
-                            <img src="Images/PhotoArtist.jpeg" alt="Sebastian Mora" class="card-img circle-img">
-                        </div>
-                        <div class="card-metadata">
-                            <span class="card-title-text">Sebastian Mora</span>
-                            <span class="card-sub-text">Artiste</span>
-                        </div>
-                    </div>
-
-                    <div class="spotify-card artist-circle-card">
-                        <div class="card-image-wrap">
-                            <img src="Images/The-WeekndArtist.png" alt="The Weeknd" class="card-img circle-img">
-                        </div>
-                        <div class="card-metadata">
-                            <span class="card-title-text">The Weeknd</span>
-                            <span class="card-sub-text">Artiste</span>
-                        </div>
-                    </div>
-
-                    <div class="spotify-card artist-circle-card">
-                        <div class="card-image-wrap">
-                            <img src="Images/DaftPunkArtist.png" alt="Daft Punk" class="card-img circle-img">
-                        </div>
-                        <div class="card-metadata">
-                            <span class="card-title-text">Daft Punk</span>
-                            <span class="card-sub-text">Artiste</span>
-                        </div>
-                    </div>
-
-                    <div class="spotify-card artist-circle-card">
-                        <div class="card-image-wrap">
-                            <img src="Images/BadBunnyArtist.png" alt="Bad Bunny" class="card-img circle-img">
-                        </div>
-                        <div class="card-metadata">
-                            <span class="card-title-text">Bad Bunny</span>
-                            <span class="card-sub-text">Artiste</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="home-shelf">
-                <h3 class="shelf-title">&#201;cout&#233;s r&#233;cemment ou sugg&#233;r&#233;s</h3>
-                <div class="grid-container">
-                    
-                    <div class="spotify-card album-square-card navigate-to-album">
-                        <div class="card-image-wrap">
-                            <img src="Images/Yodebebe.png" alt="Portfolio Sebastian Mora" class="card-img">
-                            <button class="card-play-hover" aria-label="Lire le portfolio">
-                                <svg viewBox="0 0 24 24" width="24" height="24" fill="black"><path d="M8 5v14l11-7z"/></svg>
-                            </button>
-                        </div>
-                        <div class="card-metadata">
-                            <span class="card-title-text">PORTFOLIO</span>
-                            <span class="card-sub-text">Sebastian Mora</span>
-                        </div>
-                    </div>
-
-                    <div class="spotify-card album-square-card">
-                        <div class="card-image-wrap">
-                            <img src="Images/RandomAccessMemories.png" alt="Random Access Memories - Daft Punk" class="card-img">
-                        </div>
-                        <div class="card-metadata">
-                            <span class="card-title-text">Random Access Memories</span>
-                            <span class="card-sub-text">Daft Punk</span>
-                        </div>
-                    </div>
-
-                    <div class="spotify-card album-square-card">
-                        <div class="card-image-wrap">
-                            <img src="Images/Starboy.png" alt="Starboy - The Weeknd" class="card-img"> 
-                        </div>
-                        <div class="card-metadata">
-                            <span class="card-title-text">Starboy</span>
-                            <span class="card-sub-text">The Weeknd</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
+    <!-- Écran de démarrage -->
+    <div class="splash" id="splash" aria-hidden="true">
+        <div class="splash-inner">
+            <img src="Images/Yodebebe.png" alt="">
+            <div class="eq splash-eq"><i></i><i></i><i></i><i></i></div>
+            <strong>Sebastian Mora</strong>
+            <span>Portfolio · BTS SIO SLAM</span>
         </div>
     </div>
 
-    <div id="album-view" class="view-section" style="display: none;">
-        <div class="left-content">
-            
-            <div class="top-nav-bar">
-                <button class="back-home-btn" id="btn-back-home" aria-label="Retour &#224; l'accueil">
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+    <div class="app" id="app">
+
+        <!-- ============ BARRE LATÉRALE GAUCHE ============ -->
+        <aside class="sidebar" aria-label="Navigation principale">
+            <nav class="sb-block sb-nav">
+                <a href="#/home" class="sb-link" data-route="home" data-nav="home">
+                    <span class="ico-off" data-icon="home"></span><span class="ico-on" data-icon="homeFill"></span>
                     Accueil
+                </a>
+                <a href="#/search" class="sb-link" data-route="search" data-nav="search">
+                    <span data-icon="search"></span>
+                    Rechercher
+                </a>
+            </nav>
+
+            <section class="sb-block sb-library">
+                <header class="lib-head">
+                    <span class="lib-title"><span data-icon="library"></span> Bibliothèque</span>
+                </header>
+                <div class="chips" id="lib-chips">
+                    <button class="chip" data-filter="album">Albums</button>
+                    <button class="chip" data-filter="artist">Artistes</button>
+                    <button class="chip" data-filter="playlist">Playlists</button>
+                </div>
+                <ul class="lib-list" id="lib-list"></ul>
+            </section>
+        </aside>
+
+        <!-- ============ ZONE PRINCIPALE ============ -->
+        <main class="main" id="main" data-view="home">
+            <div class="main-bg" id="main-bg" aria-hidden="true"></div>
+
+            <header class="topbar" id="topbar">
+                <div class="topbar-bg" id="topbar-bg"></div>
+                <div class="nav-arrows">
+                    <button class="round-btn" id="nav-back" aria-label="Retour" data-icon="chevLeft"></button>
+                    <button class="round-btn" id="nav-fwd" aria-label="Suivant" data-icon="chevRight"></button>
+                </div>
+
+                <div class="topbar-sticky" id="topbar-sticky">
+                    <button class="play-btn sm" id="topbar-play" aria-label="Lecture" data-play-ctx="album"></button>
+                    <span class="topbar-title" id="topbar-title"></span>
+                </div>
+
+                <label class="search-box" id="search-box">
+                    <span data-icon="search"></span>
+                    <input type="search" id="search-input" placeholder="Que souhaitez-vous écouter ?" autocomplete="off" aria-label="Rechercher dans le portfolio">
+                    <kbd>/</kbd>
+                </label>
+
+                <div class="topbar-right">
+                    <a class="pill-btn" href="Images/Mon_CV.pdf" target="_blank" rel="noopener">
+                        <span data-icon="download"></span> Mon CV
+                    </a>
+                    <a href="#/artist" data-route="artist" class="avatar-btn" aria-label="Profil de Sebastian Mora">
+                        <img src="Images/PhotoArtist.jpeg" alt="">
+                    </a>
+                </div>
+            </header>
+
+            <div class="view" id="view"></div>
+        </main>
+
+        <!-- ============ VUE EN LECTURE (PANNEAU DROIT) ============ -->
+        <aside class="np" id="np" aria-label="Vue En lecture" aria-hidden="true">
+            <div class="np-head">
+                <button class="icon-btn np-collapse" id="np-collapse" aria-label="Réduire" data-icon="chevDown"></button>
+                <a href="#/album" data-route="album" class="np-context" id="np-context">PORTFOLIO</a>
+                <button class="icon-btn" id="np-close" aria-label="Fermer le panneau" data-icon="close"></button>
+            </div>
+
+            <div class="np-scroll" id="np-scroll">
+                <div class="np-hero" id="np-hero">
+                    <div class="np-hero-glow"></div>
+                    <div class="np-hero-img" id="np-hero-img"></div>
+                    <canvas class="np-viz" id="np-viz" aria-hidden="true"></canvas>
+                </div>
+
+                <div class="np-titleline">
+                    <div class="np-titles">
+                        <h2 id="np-title">Section</h2>
+                        <p id="np-sub">Sélectionnez une section pour afficher les détails ici.</p>
+                    </div>
+                    <button class="icon-btn like-btn big" id="np-like" aria-label="Ajouter aux titres likés"></button>
+                </div>
+
+                <!-- Contrôles (mobile uniquement) -->
+                <div class="np-controls">
+                    <div class="pl-progress">
+                        <span class="time" data-time-cur>0:00</span>
+                        <div class="slider" data-progress><div class="slider-track"><div class="slider-fill"></div></div><div class="slider-thumb"></div></div>
+                        <span class="time" data-time-total>--:--</span>
+                    </div>
+                    <div class="np-ctrl-btns">
+                        <button class="icon-btn toggle" data-action="shuffle" aria-label="Lecture aléatoire" data-icon="shuffle"></button>
+                        <button class="icon-btn" data-action="prev" aria-label="Précédent" data-icon="prev"></button>
+                        <button class="pl-play xl" data-play-toggle aria-label="Lecture"></button>
+                        <button class="icon-btn" data-action="next" aria-label="Suivant" data-icon="next"></button>
+                        <button class="icon-btn toggle" data-action="repeat" aria-label="Répéter" data-icon="repeat"></button>
+                    </div>
+                </div>
+
+                <section class="np-card np-lyrics" id="np-lyrics" data-route="lyrics" role="link" tabindex="0">
+                    <header><h3>Aperçu des paroles</h3><span class="ly-open">Afficher les paroles</span></header>
+                    <div id="np-lyrics-lines"></div>
+                </section>
+
+                <section class="np-card np-about">
+                    <h3>À propos</h3>
+                    <div id="np-desc" class="rich"><p>Sélectionnez une section pour afficher les détails ici.</p></div>
+                </section>
+
+                <section class="np-card np-next">
+                    <header><h3>Suivant dans la file</h3><a href="#/album" data-route="album">Ouvrir l'album</a></header>
+                    <div id="np-next"></div>
+                </section>
+
+                <section class="np-card np-artist">
+                    <div class="np-artist-img"><img src="Images/PhotoArtist.jpeg" alt="Sebastian Mora"><span>À propos de l'artiste</span></div>
+                    <div class="np-artist-body">
+                        <a href="#/artist" data-route="artist" class="np-artist-name">Sebastian Mora</a>
+                        <div class="np-artist-row">
+                            <span class="muted">BTS SIO SLAM · Alternant chez Everial</span>
+                            <button class="outline-btn" data-follow>Suivre</button>
+                        </div>
+                        <p class="muted small">24 ans, étudiant à Nexa Digital School. Passionné par la résolution de problèmes complexes et la conception d'outils concrets.</p>
+                    </div>
+                </section>
+            </div>
+        </aside>
+
+        <!-- ============ LECTEUR ============ -->
+        <footer class="player" id="player">
+            <div class="pl-left">
+                <button class="pl-cover-btn" id="pl-open" aria-label="Afficher la vue En lecture">
+                    <img id="pl-cover" src="Images/Yodebebe.png" alt="">
+                    <span class="pl-cover-expand" data-icon="chevUp"></span>
                 </button>
+                <div class="pl-text">
+                    <div class="pl-title" id="pl-title">Aucun titre sélectionné</div>
+                    <a href="#/artist" data-route="artist" class="pl-sub" id="pl-sub">Sebastian Mora</a>
+                </div>
+                <button class="icon-btn like-btn" id="pl-like" aria-label="Ajouter aux titres likés"></button>
+                <div class="eq pl-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
             </div>
 
-            <div class="banner">
-                <img src="Images/Yodebebe.png" alt="Couverture Album Portfolio" class="album-Image">
-                <div class="text-content">
-                    <span class="type">Album</span>
-                    <h1 class="title">PORTFOLIO</h1>
-                    <div class="footer-info">
-                        <img src="Images/PhotoArtist.jpeg" alt="Sebastian Mora" class="artist-thumb">
-                        <span class="artist-name" id="btn-restore-album" style="cursor:pointer; text-decoration:underline;">Sebastian Mora</span>
-                        <span class="details"> &#8226; 2026 &#8226; 6 Tracks &#8226; 21 min 15 s</span>
-                    </div>
+            <div class="pl-center">
+                <div class="pl-buttons">
+                    <button class="icon-btn toggle" data-action="shuffle" aria-label="Lecture aléatoire" data-icon="shuffle"></button>
+                    <button class="icon-btn" data-action="prev" aria-label="Titre précédent" data-icon="prev"></button>
+                    <button class="pl-play" data-play-toggle aria-label="Lecture"></button>
+                    <button class="icon-btn" data-action="next" aria-label="Titre suivant" data-icon="next"></button>
+                    <button class="icon-btn toggle" data-action="repeat" aria-label="Répéter" data-icon="repeat"></button>
                 </div>
-            </div>
-
-            <div class="action-bar">
-                <div class="left-actions">
-                    <button class="play-btn" id="btn-master-play" aria-label="Lecture">
-                        <svg id="master-play-icon" viewBox="0 0 24 24" width="28" height="28" fill="black">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </button>
-                    <button class="icon-btn circle-btn" aria-label="Ajouter">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.25 12.75V19h1.5v-6.25H19v-1.5h-6.25V5h-1.5v6.25H5v1.5h6.25z"/></svg>
-                    </button>
-                    <button class="icon-btn dots-btn" aria-label="Plus d'options">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4.5 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm7.5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm7.5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
-                    </button>
-                </div>
-                <div class="right-actions">
-                    <span class="list-text">Liste</span>
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M3 22a1 1 0 110-2h18a1 1 0 110 2H3zm0-9a1 1 0 110-2h18a1 1 0 110 2H3zm0-9a1 1 0 110-2h18a1 1 0 110 2H3z"/></svg>
+                <div class="pl-progress">
+                    <span class="time" data-time-cur>0:00</span>
+                    <div class="slider" data-progress><div class="slider-track"><div class="slider-fill"></div></div><div class="slider-thumb"></div></div>
+                    <span class="time" data-time-total>--:--</span>
                 </div>
             </div>
 
-            <div class="tracklist-header">
-                <div class="col-num">#</div>
-                <div class="col-title">Titre</div>
-                <div class="col-duration">
-                    <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm8.5-4.75a.75.75 0 00-1.5 0V8.5a.75.75 0 00.34.62l3.25 2a.75.75 0 10.82-1.24l-2.91-1.79V3.25z"/></svg>
-                </div>
+            <div class="pl-right">
+                <button class="icon-btn toggle" id="btn-sound" aria-label="Musique d'ambiance" title="Musique d'ambiance" data-icon="note"></button>
+                <button class="icon-btn toggle" id="btn-lyrics" aria-label="Paroles" title="Paroles" data-icon="mic"></button>
+                <button class="icon-btn toggle" id="btn-np" aria-label="Vue En lecture" title="Vue En lecture" data-icon="np"></button>
+                <button class="icon-btn" id="btn-mute" aria-label="Couper le son"></button>
+                <div class="slider vol" id="volume"><div class="slider-track"><div class="slider-fill"></div></div><div class="slider-thumb"></div></div>
             </div>
 
-            <div class="portfolio-list">
-                
-                <div id="track-1" class="track-row" data-track-id="1" role="button" tabindex="0">
-                    <div class="col-num">
-                        <span class="num-text">1</span>
-                        <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
-                    </div>
-                    <div class="col-title">
-                        <div class="main-text">PARCOURS</div>
-                        <div class="sub-text">Mon exp&#233;rience, formations, qui suis-je?</div>
-                    </div>
-                    <div class="col-duration">3:57</div>
-                </div>
+            <button class="pl-play mobile-play" data-play-toggle aria-label="Lecture"></button>
+            <div class="pl-mobile-progress" data-progress><div class="slider-fill"></div></div>
+        </footer>
 
-                <div id="track-2" class="track-row" data-track-id="2" role="button" tabindex="0">
-                    <div class="col-num">
-                        <span class="num-text">2</span>
-                        <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
-                    </div>
-                    <div class="col-title">
-                        <div class="main-text">ENTREPRISE</div>
-                        <div class="sub-text">Alternant chez Everial</div>
-                    </div>
-                    <div class="col-duration">3:44</div>
-                </div>
-
-                <div id="track-3" class="track-row" data-track-id="3" role="button" tabindex="0">
-                    <div class="col-num">
-                        <span class="num-text">3</span>
-                        <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
-                    </div>
-                    <div class="col-title">
-                        <div class="main-text">COMP&#201;TENCES</div>
-                        <div class="sub-text">Tech stack, langages et outils ma&#238;tris&#233;s</div>
-                    </div>
-                    <div class="col-duration">3:36</div>
-                </div>
-
-                <div id="track-4" class="track-row" data-track-id="4" role="button" tabindex="0">
-                    <div class="col-num">
-                        <span class="num-text">4</span>
-                        <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
-                    </div>
-                    <div class="col-title">
-                        <div class="main-text"><span class="explicit-badge">E</span> PROJETS</div>
-                        <div class="sub-text">Projets d'&#233;cole (Kuzco, Kahoot, Tier List) et Everial</div>
-                    </div>
-                    <div class="col-duration">3:33</div>
-                </div>
-
-                <div id="track-5" class="track-row" data-track-id="5" role="button" tabindex="0">
-                    <div class="col-num">
-                        <span class="num-text">5</span>
-                        <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
-                    </div>
-                    <div class="col-title">
-                        <div class="main-text">VEILLE TECHNO</div>
-                        <div class="sub-text">Sujets d'actualit&#233;, articles et innovations</div>
-                    </div>
-                    <div class="col-duration">3:20</div>
-                </div>
-
-                <div id="track-6" class="track-row" data-track-id="6" role="button" tabindex="0">
-                    <div class="col-num">
-                        <span class="num-text">6</span>
-                        <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
-                    </div>
-                    <div class="col-title">
-                        <div class="main-text">TABLEAU DE SYNTH&#200;SE</div>
-                        <div class="sub-text">Document officiel E5 - R&#233;alisations professionnelles</div>
-                    </div>
-                    <div class="col-duration">3:05</div>
-                </div>
-
-                <div id="track-7" class="track-row" data-track-id="7" role="button" tabindex="0">
-                    <div class="col-num">
-                        <span class="num-text">7</span>
-                        <svg class="play-icon-row" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"/></svg>
-                    </div>
-                    <div class="col-title">
-                        <div class="main-text">CV</div>
-                        <div class="sub-text">Mon Curriculum Vitae</div>
-                    </div>
-                    <div class="col-duration">1:45</div>
-                </div>
-
-            </div>
-        </div>
+        <!-- ============ NAVIGATION MOBILE ============ -->
+        <nav class="mobile-nav" aria-label="Navigation mobile">
+            <a href="#/home" data-route="home" data-nav="home"><span class="ico-off" data-icon="home"></span><span class="ico-on" data-icon="homeFill"></span>Accueil</a>
+            <a href="#/search" data-route="search" data-nav="search"><span data-icon="search"></span>Rechercher</a>
+            <a href="#/library" data-route="library" data-nav="library"><span data-icon="library"></span>Bibliothèque</a>
+        </nav>
     </div>
 
-    <div class="sidebar-panel" id="sidebarPanel">
-        <div class="sidebar-header">
-            <span id="sidebarSubTitle" class="sidebar-sub-title">D&#233;tails</span>
-            <button class="close-btn" id="btn-close-sidebar" aria-label="Fermer le panneau">&#215;</button>
-        </div>
-        <div class="sidebar-card">
-            <h2 id="sidebarTitle" class="sidebar-main-title">Section</h2>
-        </div>
-        <div class="sidebar-body">
-            <h3>&#192; propos</h3>
-            <p id="sidebarDescription">S&#233;lectionnez une section pour afficher les d&#233;tails ici.</p>
-        </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="ctx-menu" id="ctx-menu" role="menu"></div>
+    <div class="recap" id="recap" aria-hidden="true" role="dialog" aria-label="Récap 2026"></div>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="icon-btn lightbox-close" aria-label="Fermer" data-icon="close"></button>
+        <img id="lightbox-img" alt="">
+        <p id="lightbox-cap"></p>
     </div>
 
-    <div class="spotify-player-bar">
-        <div class="player-track-info" id="btn-restore-player" style="cursor: pointer;">
-            <img src="Images/Yodebebe.png" alt="Miniature" class="player-mini-cover">
-            <div class="player-text">
-                <div id="player-current-title" class="player-title">Aucun titre s&#233;lectionn&#233;</div>
-                <div id="player-current-sub" class="player-artist">Sebastian Mora</div>
-            </div>
-        </div>
-
-        <div class="player-controls">
-            <div class="control-buttons">
-                <button class="player-icon-btn" id="btn-player-prev" aria-label="Titre pr&#233;c&#233;dent">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.83 12l7.83 5.48a1 1 0 011.34-1.48V8a1 1 0 01-1.34-1.48zM3 7a1 1 0 012 0v10a1 1 0 01-2 0z"/></svg>
-                </button>
-                <button class="player-play-btn" id="btn-player-play" aria-label="Lecture">
-                    <svg id="player-play-icon" viewBox="0 0 24 24" width="20" height="20" fill="black">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                </button>
-                <button class="player-icon-btn" id="btn-player-next" aria-label="Titre suivant">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.17 12L4.34 6.52A1 1 0 003 8v8a1 1 0 001.34 1.48zM19 7a1 1 0 012 0v10a1 1 0 01-2 0z"/></svg>
-                </button>
-            </div>
-            <div class="playback-bar">
-                <span id="progress-time-current" class="time-text">0:00</span>
-                <div class="progress-bar-container">
-                    <div id="player-progress" class="progress-bar-fill"></div>
-                </div>
-                <span id="progress-time-total" class="time-text">--:--</span>
-            </div>
-        </div>
-
-        <div class="player-volume-zone">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="#b3b3b3"><path d="M11.25 5.586L6.664 10H3a1 1 0 00-1 1v2a1 1 0 001 1h3.664l4.586 4.414A1 1 0 0013 17.707V6.293a1 1 0 00-1.75-.707z"/></svg>
-            <div class="volume-bar-container">
-                <div class="volume-bar-fill"></div>
-            </div>
-        </div>
-    </div>
-
-    <script src="app.js" defer></script>
+    <script src="app.js" charset="utf-8" defer></script>
+    <script src="intro.js" charset="utf-8" defer></script>
 </body>
 </html>
