@@ -490,7 +490,6 @@ const VIEWS = {
     },
 
     artist: function () {
-        const popular = TRACKS.slice(0, 5);
         return '<div class="page artist">' +
             '<header class="artist-hero" style="--hero-img:url(\'' + ARTIST.img + '\')">' +
                 '<div class="artist-hero-bg"></div>' +
@@ -504,8 +503,10 @@ const VIEWS = {
             '<div class="page-body">' +
                 actionBar("artist") +
                 '<section class="artist-popular"><h2>Populaires</h2>' +
-                    '<div class="tracklist compact" id="popular-list">' + popular.map((t, i) => trackRow(t, i, { thumb: true })).join("") + '</div>' +
-                    '<button class="text-btn" id="more-popular">Plus</button>' +
+                    '<div class="popular-cols" id="popular-list">' +
+                        '<div class="tracklist compact">' + TRACKS.slice(0, 4).map((t, i) => trackRow(t, i, { thumb: true })).join("") + '</div>' +
+                        '<div class="tracklist compact">' + TRACKS.slice(4).map((t, i) => trackRow(t, i + 4, { thumb: true })).join("") + '</div>' +
+                    '</div>' +
                 '</section>' +
                 '<div class="artist-cols">' +
                     '<section class="artist-pick"><h2>Sélection de l\'artiste</h2>' +
@@ -715,7 +716,7 @@ function render() {
     switch (route) {
         case "home": setAccent(ALBUM.cover, ALBUM.color); bindQuickHover(); break;
         case "album": setAccent(ALBUM.cover, ALBUM.color); break;
-        case "artist": setAccent(ARTIST.img, "#7a5a3c"); bindPopularMore(); break;
+        case "artist": setAccent(ARTIST.img, "#7a5a3c"); break;
         case "liked": main.style.setProperty("--view-color", "hsl(250 55% 38%)"); break;
         case "search": main.style.setProperty("--view-color", "#121212"); renderSearchResults(); break;
         case "lyrics": { const lt = byId(state.currentId); setAccent(lt ? lt.art : ALBUM.cover, lt ? lt.color : ALBUM.color); updateLyrics(); break; }
@@ -751,20 +752,6 @@ function bindQuickHover() {
         });
     });
     grid.addEventListener("mouseleave", function () { setAccent(ALBUM.cover, ALBUM.color); });
-}
-
-function bindPopularMore() {
-    const btn = $("#more-popular");
-    if (!btn) return;
-    btn.addEventListener("click", function () {
-        const list = $("#popular-list");
-        const expanded = btn.dataset.expanded === "1";
-        const tracks = expanded ? TRACKS.slice(0, 5) : TRACKS;
-        list.innerHTML = tracks.map((t, i) => trackRow(t, i, { thumb: true })).join("");
-        btn.dataset.expanded = expanded ? "0" : "1";
-        btn.textContent = expanded ? "Plus" : "Moins";
-        sync();
-    });
 }
 
 /* ---------------------------------------------------------------------
