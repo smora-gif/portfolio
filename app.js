@@ -201,15 +201,6 @@ const TRACKS = [
     }
 ];
 
-const OTHER_ARTISTS = [
-    { name: "The Weeknd", img: "Images/The-WeekndArtist.png" },
-    { name: "Daft Punk", img: "Images/DaftPunkArtist.png" },
-    { name: "Bad Bunny", img: "Images/BadBunnyArtist.png" }
-];
-const OTHER_ALBUMS = [
-    { title: "Random Access Memories", artist: "Daft Punk", img: "Images/RandomAccessMemories.png" },
-    { title: "Starboy", artist: "The Weeknd", img: "Images/Starboy.png" }
-];
 
 const byId = (id) => TRACKS.find((t) => t.id === id);
 const toSec = (d) => { const p = d.split(":"); return parseInt(p[0], 10) * 60 + parseInt(p[1], 10); };
@@ -278,12 +269,7 @@ const colorCache = {
     "Images/ImageProjets.png": "hsl(336 62% 30%)",
     "Images/blockchain.png": "hsl(212 37% 35%)",
     "Images/tableau-e5.png": "hsl(343 62% 42%)",
-    "Images/ImageCV.png": "hsl(179 36% 42%)",
-    "Images/The-WeekndArtist.png": "hsl(89 11% 42%)",
-    "Images/DaftPunkArtist.png": "hsl(42 52% 42%)",
-    "Images/BadBunnyArtist.png": "hsl(11 51% 42%)",
-    "Images/RandomAccessMemories.png": "hsl(47 16% 42%)",
-    "Images/Starboy.png": "hsl(356 62% 42%)"
+    "Images/ImageCV.png": "hsl(179 36% 42%)"
 };
 
 function rgbToHsl(r, g, b) {
@@ -426,14 +412,6 @@ const VIEWS = {
             '</div>';
         }).join("");
 
-        const artists = [{ title: ARTIST.name, sub: "Artiste", img: ARTIST.img, circle: true, route: "artist", playCtx: "album" }]
-            .concat(OTHER_ARTISTS.map((a) => ({ title: a.name, sub: "Artiste", img: a.img, circle: true })))
-            .map(card).join("");
-
-        const albums = [{ title: ALBUM.title, sub: ARTIST.name, img: ALBUM.cover, route: "album", playCtx: "album" }]
-            .concat(OTHER_ALBUMS.map((a) => ({ title: a.title, sub: a.artist, img: a.img })))
-            .map(card).join("");
-
         const recentIds = state.recent.filter(byId).slice(0, 6);
         const recent = recentIds.length
             ? shelf("Reprendre la lecture", recentIds.map(function (id, i) {
@@ -451,8 +429,6 @@ const VIEWS = {
             '<h1 class="home-title">' + greeting() + '</h1>' +
             '<div class="quick-grid" id="quick-grid">' + quick + '</div>' +
             recent +
-            shelf("Artistes populaires", artists) +
-            shelf("Écoutés récemment ou suggérés", albums) +
             tracksShelf +
             footerHTML() +
         '</div>';
