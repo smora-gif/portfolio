@@ -661,11 +661,8 @@ function libraryItems() {
     return [
         { type: "playlist", title: "Titres likés", meta: "Playlist • " + state.liked.size + " titre" + (state.liked.size > 1 ? "s" : ""), liked: true, route: "liked", ctx: "liked" },
         { type: "album", title: ALBUM.title, meta: "Album • " + ARTIST.name, img: ALBUM.cover, route: "album", ctx: "album" },
-        { type: "artist", title: ARTIST.name, meta: "Artiste", img: ARTIST.img, route: "artist", circle: true, ctx: "album" },
-        { type: "playlist", title: "L'intro", meta: "Expérience • Sebastian Mora", intro: true },
-        { type: "playlist", title: "Récap 2026", meta: "Stories • Sebastian Mora", recap: true }
-    ].concat(OTHER_ARTISTS.map((a) => ({ type: "artist", title: a.name, meta: "Artiste", img: a.img, circle: true })))
-     .concat(OTHER_ALBUMS.map((a) => ({ type: "album", title: a.title, meta: "Album • " + a.artist, img: a.img })));
+        { type: "artist", title: ARTIST.name, meta: "Artiste", img: ARTIST.img, route: "artist", circle: true, ctx: "album" }
+    ];
 }
 
 function libraryItemsHTML() {
