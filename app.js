@@ -450,12 +450,6 @@ const VIEWS = {
             '<div class="home-chips"><button class="chip active">Tout</button><button class="chip" data-route="album">Album</button><button class="chip" data-route="artist">Artiste</button><button class="chip" data-route="liked">Titres likés</button></div>' +
             '<h1 class="home-title">' + greeting() + '</h1>' +
             '<div class="quick-grid" id="quick-grid">' + quick + '</div>' +
-            '<div class="recap-banner" data-recap role="button" tabindex="0">' +
-                '<div class="rb-shapes"><i></i><i></i><i></i></div>' +
-                '<div class="rb-text"><span class="rb-tag">' + icon("sparkle", 14) + ' NOUVEAU</span><strong>Ton Récap 2026 est là</strong>' +
-                '<p>Parcours, stack, projets, alternance, veille : l\'année de Sebastian en 7 écrans.</p></div>' +
-                '<span class="rb-btn">Découvrir</span>' +
-            '</div>' +
             recent +
             shelf("Artistes populaires", artists) +
             shelf("Écoutés récemment ou suggérés", albums) +
@@ -587,7 +581,7 @@ function actionBar(ctx) {
 function footerHTML() {
     return '<footer class="page-foot">' +
         '<div class="foot-cols">' +
-            '<div><h4>Portfolio</h4><a href="#/album" data-route="album">L\'album</a><a href="#/artist" data-route="artist">L\'artiste</a><a href="#/search" data-route="search">Rechercher</a><a href="#/lyrics" data-route="lyrics">Paroles</a><a href="#" data-recap>Récap 2026</a><a href="#" data-intro>Revoir l\'intro</a></div>' +
+            '<div><h4>Portfolio</h4><a href="#/album" data-route="album">L\'album</a><a href="#/artist" data-route="artist">L\'artiste</a><a href="#/search" data-route="search">Rechercher</a><a href="#/lyrics" data-route="lyrics">Paroles</a><a href="#" data-intro>Revoir l\'intro</a></div>' +
             '<div><h4>Documents</h4><a href="Images/Mon_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a><a href="Images/MORA Sebastian - E5---------.pdf" target="_blank" rel="noopener">Tableau de synthèse E5 (PDF)</a></div>' +
             '<div><h4>Raccourcis</h4><span><kbd>Espace</kbd> Lecture / pause</span><span><kbd>Ctrl</kbd> + <kbd>→</kbd> Suivant</span><span><kbd>/</kbd> Rechercher</span><span><kbd>L</kbd> Liker le titre</span><span><kbd>M</kbd> Couper le son</span></div>' +
         '</div>' +
