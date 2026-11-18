@@ -494,6 +494,7 @@ const VIEWS = {
         return '<div class="page artist">' +
             '<header class="artist-hero" style="--hero-img:url(\'' + ARTIST.img + '\')">' +
                 '<div class="artist-hero-bg"></div>' +
+                '<img class="artist-avatar" src="' + ARTIST.img + '" alt="' + ARTIST.name + '">' +
                 '<div class="artist-hero-text">' +
                     '<span class="verified">' + icon("verified", 22) + ' Artiste vérifié</span>' +
                     '<h1 class="hero-title">' + ARTIST.name + '</h1>' +
